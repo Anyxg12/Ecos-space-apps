@@ -11,7 +11,8 @@
     "typecheck": "tsc -b --pretty",
     "preview": "vite preview --port 4175",
     "qa": "node scripts/qa.mjs",
-    "check-links": "node scripts/check-links.mjs"
+    "check-links": "node scripts/check-links.mjs",
+    "test:backend": "node supabase/tests/adapt.test.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.119.0",
