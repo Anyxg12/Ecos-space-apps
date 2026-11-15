@@ -97,7 +97,7 @@ export function ProfileScreen({ profile, onSave, onClose, onReplay, onReset }: {
 
         <section className="prof__box" aria-labelledby="prof-key">
           <h3 id="prof-key">Clave de recuperación — Pendiente</h3>
-          <p>La clave secreta solo funciona en este dispositivo. Recuperar tu cuenta o seguir en otro dispositivo llegará cuando ECOS se conecte a un servidor (Supabase — Pendiente). Hoy, si borras los datos del navegador, tu progreso se pierde.</p>
+          <p>La clave secreta solo funciona en este dispositivo y todavía no se puede recuperar la cuenta en otro. Si borras los datos del navegador, pierdes tu progreso.</p>
         </section>
 
         <section className="prof__box" aria-labelledby="prof-rank">

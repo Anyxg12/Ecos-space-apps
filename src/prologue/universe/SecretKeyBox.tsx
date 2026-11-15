@@ -5,7 +5,7 @@ type Step = 'idle' | 'create' | 'change' | 'confirmRemove';
 
 /**
  * Clave secreta local: crear, desbloquear, cambiar o quitar.
- * Sólo se guarda sal + hash (PBKDF2-SHA-256). No hay recuperación ni sincronización (Supabase — Pendiente).
+ * Sólo se guarda sal + hash (PBKDF2-SHA-256). La clave nunca sale del navegador; no hay recuperación.
  */
 export function SecretKeyBox({ mode, onChange }: { mode: 'unlock' | 'manage'; onChange: () => void }) {
   const id = useId();
