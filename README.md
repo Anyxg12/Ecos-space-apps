@@ -29,8 +29,8 @@ Cinematic prologue → universe → Mars (Spirit · Opportunity) or Moon (ALSEP)
 ### Estado del proyecto / Roadmap
 
 - ✅ **Fase 1 — Prototipo frontend (esta versión):** prólogo, universos de Marte y la Luna en tres modos (Junior, Explorer, Discovery), tres historias interactivas (Spirit, Opportunity, ALSEP) con fuentes oficiales de la NASA, Mis logros, «Top exploradores» con datos de demostración y perfil local. Todo funciona en el navegador, sin servidor.
-- 🧪 **Fase 2 — Backend opcional (rama `backend`, en desarrollo):** se activa sólo si se configuran `VITE_SUPABASE_URL` y `VITE_SUPABASE_ANON_KEY`; sin ellas (o si el servidor falla) la app funciona exactamente como la Fase 1. Guía paso a paso: [`docs/BACKEND.md`](docs/BACKEND.md).
-  - **Educación personalizada con IA:** Edge Function de Supabase `adapt` que pide a Google Gemini una analogía corta que relaciona el hecho verificado de cada parada con los intereses del usuario. La clave de Gemini vive sólo en los secretos de Supabase. El hecho original y su fuente nunca cambian; la analogía se muestra debajo con la etiqueta «Analogía para ti · generada con IA» y pasa un control automático (no puede contener cifras que no estén en el hecho).
+- 🧪 **Fase 2 — Backend (en vivo desde el 15 nov 2026, en `main`):** se activa sólo si se configuran `VITE_SUPABASE_URL` y `VITE_SUPABASE_ANON_KEY`; sin ellas (o si el servidor falla) la app funciona exactamente como la Fase 1. Guía paso a paso: [`docs/BACKEND.md`](docs/BACKEND.md).
+  - **Educación personalizada con IA:** Edge Function de Supabase `adapt` que pide a Google Gemini una analogía corta que relaciona el hecho verificado de cada parada con los intereses del usuario. La clave de Gemini está sólo en el servidor (Edge Function de Supabase), nunca en el frontend ni en el repositorio. El hecho original y su fuente nunca cambian; la analogía se muestra debajo con la etiqueta «Analogía para ti · generada con IA» y pasa un control automático (no puede contener cifras que no estén en el hecho).
   - **Supabase:** cuenta anónima (sin correo ni datos personales), perfil con seudónimo, progreso sincronizado y ranking global real con RLS.
   - Pendiente: recuperar la cuenta en otro dispositivo.
 - Lo provisional y lo pendiente está detallado en [`docs/PROVISIONAL.md`](docs/PROVISIONAL.md).
@@ -60,7 +60,7 @@ La app es 100 % estática: basta con publicar `dist/`.
 - **Vercel:** *Add New → Project →* importar el repositorio. Vercel detecta Vite: *Build command* `npm run build`, *Output directory* `dist`. No hace falta configuración extra ni variables de entorno.
 - **Netlify u otro hosting estático:** `npm run build` y subir la carpeta `dist/`.
 
-Para el despliegue estático no hace falta configurar secretos. El backend opcional (Supabase + Gemini) se describe en [`docs/BACKEND.md`](docs/BACKEND.md); la clave de Gemini vive sólo en Supabase.
+Para el despliegue estático no hace falta configurar secretos. El backend opcional (Supabase + Gemini) se describe en [`docs/BACKEND.md`](docs/BACKEND.md); la clave de Gemini está sólo en el servidor de Supabase, nunca en el frontend ni en el repositorio.
 
 ### Subir a GitHub desde Windows (PowerShell)
 
@@ -269,7 +269,7 @@ MIT (ver `LICENSE`). La imagen Blue Marble es de dominio público (NASA) y queda
 ### Project status / Roadmap
 
 - ✅ **Phase 1 — Frontend prototype (this version):** prologue, Mars and Moon universes in three modes, three interactive stories (Spirit, Opportunity, ALSEP) with official NASA sources, Mis logros, "Top exploradores" with demo data and a local profile. Runs entirely in the browser, no server.
-- 🧪 **Phase 2 — Optional backend (`backend` branch, in development):** enabled only when `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` are set; without them (or if the server fails) the app behaves exactly like Phase 1. Supabase Edge Function `adapt` asks Google Gemini for a short analogy linking each stop's verified fact to the user's interests (key stored only in Supabase secrets; output labelled "generated with AI" and checked so it cannot add numbers missing from the fact). Anonymous Supabase auth (no email/personal data), nickname profile, synced progress and a real global ranking with RLS. Guide: [`docs/BACKEND.md`](docs/BACKEND.md).
+- 🧪 **Phase 2 — Backend (live since Nov 15, 2026, on `main`):** enabled only when `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` are set; without them (or if the server fails) the app behaves exactly like Phase 1. Supabase Edge Function `adapt` asks Google Gemini for a short analogy linking each stop's verified fact to the user's interests (key kept only on the server, in the Supabase Edge Function, never in the frontend or the repository; output labelled "generated with AI" and checked so it cannot add numbers missing from the fact). Anonymous Supabase auth (no email/personal data), nickname profile, synced progress and a real global ranking with RLS. Guide: [`docs/BACKEND.md`](docs/BACKEND.md).
 - Provisional and pending items: [`docs/PROVISIONAL.md`](docs/PROVISIONAL.md).
 
 ### Quick start (Windows)
@@ -297,7 +297,7 @@ The app is fully static: publish `dist/`.
 - **Vercel:** *Add New → Project →* import the repository. Vercel detects Vite: build command `npm run build`, output directory `dist`. No extra config or environment variables needed.
 - **Netlify or any static host:** `npm run build` and upload `dist/`.
 
-The static deploy needs no secrets. The optional backend (Supabase + Gemini) is described in [`docs/BACKEND.md`](docs/BACKEND.md); the Gemini key lives only in Supabase.
+The static deploy needs no secrets. The optional backend (Supabase + Gemini) is described in [`docs/BACKEND.md`](docs/BACKEND.md); the Gemini key lives only on the Supabase server, never in the frontend or the repository.
 
 ### Push to GitHub from Windows (PowerShell)
 

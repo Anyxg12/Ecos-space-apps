@@ -4,7 +4,7 @@ dist/
 *.tsbuildinfo
 
 # capturas y artefactos de QA (se regeneran con scripts/qa.mjs)
-screenshots/
+/screenshots/
 test-results/
 playwright-report/
 

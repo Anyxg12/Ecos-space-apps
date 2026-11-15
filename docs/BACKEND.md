@@ -12,7 +12,7 @@
 | Frontend | `src/app/backend/*`, `src/app/repositories/supabase.ts`, `AnalogyChip.tsx`, `RankingScreen.tsx` | Se activa sólo con `VITE_SUPABASE_URL` y `VITE_SUPABASE_ANON_KEY`. Cuenta **anónima** (sin correo ni datos personales). El progreso se guarda primero en el navegador y se copia al servidor. El chip «Analogía para ti · generada con IA» aparece bajo el hecho verificado; si no hay backend no se muestra. El ranking muestra «● En vivo» con datos reales o, si no hay backend, la tabla rotulada «Datos de demostración». |
 
 **Claves:** la *anon / publishable key* es pública por diseño (la protege RLS) y puede ir en el frontend.
-La **clave de Gemini** y la **service_role** NUNCA van en el frontend, en el repositorio ni en el chat: sólo en los secretos de Supabase.
+La **clave de Gemini** y la **service_role** NUNCA van en el frontend, en el repositorio ni en el chat: sólo en el servidor de Supabase (secretos o código de la Edge Function desplegada).
 
 ## Paso a paso (Windows, con tu cuenta de Supabase)
 
