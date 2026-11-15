@@ -323,9 +323,10 @@
 @media (max-width: 720px) {
   .sr__top { flex-wrap: nowrap; gap: 6px; padding: max(8px, env(safe-area-inset-top)) 8px 8px; }
   .sr__title { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
-  .sr__back { margin-right: auto; }
+  .sr__back { margin-right: auto; min-width: 0; flex-shrink: 1; overflow: hidden; text-overflow: ellipsis; }
   .sr__back, .sr__tool { font-size: 11.5px !important; padding: 7px 10px !important; min-height: 34px; white-space: nowrap; }
-  .sr__tools { gap: 6px; flex-wrap: nowrap; }
+  .sr--explorer .sr__back, .sr--explorer .sr__tool { letter-spacing: .06em !important; }
+  .sr__tools { gap: 6px; flex-wrap: nowrap; flex-shrink: 0; }
   .sr__prov { display: none; }
   .sr__pips { left: 50%; top: calc(max(8px, env(safe-area-inset-top)) + 50px); bottom: auto; transform: translateX(-50%); }
   .sr__pips ol { flex-direction: row; gap: 6px; }
@@ -336,7 +337,7 @@
   .sr__panel.is-min > :not(.sr__grab):not(.sr__kicker):not(.sr__h):not(.sr__nav) { display: none; }
   .sr__panel.is-min::after { display: none !important; }
   .sr__panel.is-min .sr__h { margin-bottom: 8px; }
-  .sr__grab { display: flex; justify-content: center; align-items: center; width: calc(100% + 30px); height: 22px; margin: 0 -15px 2px; padding: 0; border: 0; background: none; cursor: pointer; position: sticky; top: -6px; z-index: 2; }
+  .sr__grab { display: flex; justify-content: center; align-items: center; width: calc(100% + 30px); height: 22px; margin: 0 -15px 2px; padding: 0; border: 0; background: none; cursor: pointer; position: sticky; top: -6px; z-index: 2; background: inherit; border-radius: 20px 20px 0 0; }
   .sr__grab span { display: block; width: 44px; height: 5px; border-radius: 3px; background: currentColor; opacity: .45; }
   .sr__grab[aria-expanded='false'] span { opacity: .8; }
   .sr__hint, .sr__blocked { top: calc(max(8px, env(safe-area-inset-top)) + 90px); font-size: 11px; }
