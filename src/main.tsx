@@ -14,6 +14,17 @@ if (new URLSearchParams(window.location.search).get('reset') === '1') {
   window.history.replaceState(window.history.state, '', url);
 }
 
+// Si se publica una versión nueva mientras alguien usa la app, los archivos viejos dejan de existir
+// y la pantalla podría quedar en negro: recargamos una sola vez para traer la versión nueva.
+window.addEventListener('vite:preloadError', (e) => {
+  const KEY = 'ecos.reloadedForUpdate';
+  if (sessionStorage.getItem(KEY)) return;
+  sessionStorage.setItem(KEY, '1');
+  e.preventDefault();
+  window.location.reload();
+});
+window.addEventListener('load', () => setTimeout(() => sessionStorage.removeItem('ecos.reloadedForUpdate'), 10000));
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <App />
