@@ -1,6 +1,9 @@
-import { useEffect, useMemo, useRef } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { EcosLogo } from '../achievements';
-import { buildRanking } from '../prologue/state/ranking';
+import { buildRanking, STAR_IDS, type RankRow } from '../prologue/state/ranking';
+import { backendEnabled } from './backend/config';
+import { fetchLeaderboard } from './backend/leaderboard';
+import { nicknameStatus } from './repositories/supabase';
 import './ranking.css';
 
 interface Props {
@@ -20,9 +23,45 @@ const COPY = {
   discovery: { title: 'Top exploradores', lead: 'Una tabla de ejemplo para mostrar cómo se vería la comunidad de ECOS. Tu fila usa tu progreso real.', me: 'Tu posición' },
 };
 
-/** Ranking «Top exploradores»: tabla de DEMOSTRACIÓN + la posición local real del usuario. */
+const LIVE_LEAD = {
+  junior: 'Exploradoras y exploradores reales de ECOS. ¡Enciende estrellas para subir!',
+  explorer: 'Clasificación global en vivo · seudónimos reales, sin datos personales.',
+  discovery: 'Clasificación global de la comunidad ECOS. Sólo seudónimos y estrellas: ningún dato personal.',
+};
+
+/**
+ * Ranking «Top exploradores».
+ * Sin backend (o si falla): tabla de DEMOSTRACIÓN + la posición local real del usuario.
+ * Con backend: ranking global real (RPC `leaderboard`) y la fila «tú» calculada con tus estrellas.
+ */
 export default function RankingScreen({ theme, alias, isUnlocked, reducedMotion, onBack, backLabel, onLogros, onExplore }: Props) {
-  const { rows, me, position, total } = useMemo(() => buildRanking(alias, isUnlocked), [alias, isUnlocked]);
+  const demo = useMemo(() => buildRanking(alias, isUnlocked), [alias, isUnlocked]);
+  const [remote, setRemote] = useState<RankRow[] | null>(null);
+  const [loadingLive, setLoadingLive] = useState(backendEnabled);
+  useEffect(() => {
+    if (!backendEnabled) return;
+    let alive = true;
+    fetchLeaderboard().then((r) => {
+      if (!alive) return;
+      setLoadingLive(false);
+      if (r) setRemote(r.map((x) => ({ alias: x.nickname, stars: x.stars, missions: x.missions })));
+    });
+    return () => {
+      alive = false;
+    };
+  }, []);
+  const live = remote !== null;
+  const { rows, me, position, total } = useMemo(() => {
+    if (!remote) return demo;
+    const mine = demo.me;
+    const nick = alias?.trim();
+    const listed = nick ? remote.findIndex((r) => r.alias === nick) : -1;
+    // la fila propia usa siempre las estrellas locales (pueden ir un paso por delante de la sincronización)
+    const rows = listed >= 0 ? remote.map((r, i) => (i === listed ? { ...r, stars: Math.max(r.stars, mine.stars), missions: Math.max(r.missions, mine.missions), me: true } : r)) : [...remote, mine];
+    rows.sort((a, b) => b.stars - a.stars || (a.me ? -1 : b.me ? 1 : 0));
+    const me = rows.find((r) => r.me)!;
+    return { rows, me, position: rows.indexOf(me) + 1, total: STAR_IDS.length };
+  }, [remote, demo, alias]);
   const head = useRef<HTMLHeadingElement>(null);
   const c = COPY[theme];
   useEffect(() => {
@@ -42,12 +81,12 @@ export default function RankingScreen({ theme, alias, isUnlocked, reducedMotion,
           <span aria-hidden="true">← </span>{backLabel}
         </button>
         <EcosLogo size={0.34} className="rk__logo" />
-        <span className="rk__demo" role="note">Datos de demostración</span>
+        {live ? <span className="rk__demo rk__live" role="note">● En vivo</span> : <span className="rk__demo" role="note">{loadingLive ? 'Cargando…' : 'Datos de demostración'}</span>}
       </header>
 
       <main className="rk__main">
         <h1 ref={head} tabIndex={-1} className="rk__h1">{c.title}</h1>
-        <p className="rk__lead">{c.lead}</p>
+        <p className="rk__lead">{live ? LIVE_LEAD[theme] : c.lead}</p>
 
         <section className="rk__me" aria-labelledby="rk-me">
           <div className="rk__pos" aria-hidden="true">#{position}</div>
@@ -58,7 +97,7 @@ export default function RankingScreen({ theme, alias, isUnlocked, reducedMotion,
               <span style={{ width: `${pct}%` }} />
             </div>
             <p className="rk__small">
-              ★ {me.stars} de {total} estrellas · {me.missions} de 3 misiones completas. Calculado con tus estrellas reales guardadas en este dispositivo.
+              ★ {me.stars} de {total} estrellas · {me.missions} de 3 misiones completas. {live ? (alias?.trim() ? 'Tus estrellas se guardan en este dispositivo y se copian al ranking global.' : 'Ponte un seudónimo en tu perfil para aparecer en el ranking global.') : 'Calculado con tus estrellas reales guardadas en este dispositivo.'}
             </p>
           </div>
           {onExplore && (
@@ -68,7 +107,7 @@ export default function RankingScreen({ theme, alias, isUnlocked, reducedMotion,
           )}
         </section>
 
-        <ol className="rk__podium" aria-label="Podio (datos de demostración)">
+        <ol className="rk__podium" aria-label={live ? 'Podio' : 'Podio (datos de demostración)'}>
           {podium.map((r, i) => (
             <li key={r.alias} className={`rk__step rk__step--${i + 1} ${r.me ? 'is-me' : ''}`} style={{ ['--i' as string]: i }}>
               <span className="rk__medal" aria-hidden="true">{i + 1}</span>
@@ -80,7 +119,7 @@ export default function RankingScreen({ theme, alias, isUnlocked, reducedMotion,
 
         <div className="rk__tablewrap">
           <table className="rk__table">
-            <caption>Tabla de demostración: los seudónimos marcados «demo» son inventados, no son personas reales.</caption>
+            <caption>{live ? 'Ranking global: seudónimos elegidos por cada explorador (nunca nombres reales).' : 'Tabla de demostración: los seudónimos marcados «demo» son inventados, no son personas reales.'}</caption>
             <thead>
               <tr>
                 <th scope="col">#</th>
@@ -108,11 +147,23 @@ export default function RankingScreen({ theme, alias, isUnlocked, reducedMotion,
         </div>
 
         <section className="rk__note" aria-labelledby="rk-pend">
-          <h2 id="rk-pend">Ranking global — Pendiente</h2>
-          <p>
-            Un ranking real entre exploradores necesita un servidor (está previsto con Supabase). Hoy ECOS no envía datos a ningún sitio:
-            tu progreso y tu seudónimo viven solo en este navegador. Las demás filas son ejemplos para la demostración.
-          </p>
+          {live ? (
+            <>
+              <h2 id="rk-pend">Ranking global</h2>
+              <p>
+                ECOS sólo guarda tu seudónimo, tu modo, tus intereses y tus estrellas, con una cuenta anónima (sin correo ni datos personales).
+                {nicknameStatus.conflict && ' Tu seudónimo ya lo usa otra persona: elige otro en tu perfil para aparecer en la tabla.'}
+              </p>
+            </>
+          ) : (
+            <>
+              <h2 id="rk-pend">Ranking global — Pendiente</h2>
+              <p>
+                Un ranking real entre exploradores necesita un servidor (está previsto con Supabase). Hoy ECOS no envía datos a ningún sitio:
+                tu progreso y tu seudónimo viven solo en este navegador. Las demás filas son ejemplos para la demostración.
+              </p>
+            </>
+          )}
           {onLogros && (
             <button type="button" className="rk__ghost" onClick={onLogros}>
               ✦ Ver Mis logros

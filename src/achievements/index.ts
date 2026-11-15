@@ -7,5 +7,5 @@ export type { Achievement, Badge, ArchiveCard, ImageAsset, ConstellationLink, Mi
 export { DEMO_ACHIEVEMENTS, DEMO_BADGES, DEMO_ARCHIVE, DEMO_LINKS } from './demoData';
 export { AssetImage } from './components/AssetImage';
 export { EcosLogo } from './components/EcosLogo';
-export { LocalStorageProgressRepository, SupabaseProgressRepository, type ProgressRepository, type ProgressListener, type UnlockMeta } from './data/progressStore';
+export { LocalStorageProgressRepository, type ProgressRepository, type ProgressListener, type UnlockMeta } from './data/progressStore';
 export { useProgress } from './data/useProgress';

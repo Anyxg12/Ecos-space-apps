@@ -26,7 +26,12 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      # Backend opcional: si existen estos secretos/variables del repositorio, la demo se conecta a Supabase.
+      # Si no existen, la compilación funciona igual y la app usa el modo local (como la versión 1.0).
       - run: npm run build
+        env:
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL || vars.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY || vars.VITE_SUPABASE_ANON_KEY }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

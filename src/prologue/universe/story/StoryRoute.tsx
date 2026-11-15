@@ -8,6 +8,7 @@ import { RouteScene } from './RouteScene';
 import { ActivityView, ACT_LABEL } from './activities';
 import { FactChips, FactBody, ExtraFacts, mainFacts } from './Facts';
 import { StopIcon } from './StopIcon';
+import { AnalogyChip } from './AnalogyChip';
 import { SoundToggle } from '../../components/SoundToggle';
 
 interface Props {
@@ -336,6 +337,7 @@ export function StoryRoute({ story, variant, reducedMotion, onClose }: Props) {
                 <ActivityView activity={stop.activity} variant={variant} reduced={reducedMotion} done={doneActs.has(stop.id) || !!(stop.star && stop.gate && host?.isUnlocked(stop.star))} onDone={() => actDone(stop.id)} />
               )}
               <FactChips facts={stop.facts} open={stop.activity.kind === 'reveal' && variant === 'discovery'} />
+              <AnalogyChip storyId={story.id} fact={mainFacts(stop.facts)[0]} variant={variant} />
               <div className="sr__nav">
                 <button type="button" className="sr__ghost" disabled={idx === 0} onClick={() => (sound.whoosh(), go(idx - 1))}>← Anterior</button>
                 <button type="button" className="sr__cta" disabled={!!gatePending} onClick={() => (sound.whoosh(), go(idx + 1))}>
@@ -349,6 +351,7 @@ export function StoryRoute({ story, variant, reducedMotion, onClose }: Props) {
               <h3 ref={headRef} tabIndex={-1} className="sr__h">{story.legacy.title[variant]}</h3>
               <p className="sr__line">{story.legacy.line[variant]}</p>
               <FactChips facts={story.legacy.facts} />
+              <AnalogyChip storyId={story.id} fact={mainFacts(story.legacy.facts)[0]} variant={variant} />
               <div className="sr__nav">
                 <button type="button" className="sr__ghost" onClick={() => go(idx - 1)}>← Anterior</button>
                 <button type="button" className="sr__cta" onClick={complete}>{story.legacy.completeLabel}</button>

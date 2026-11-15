@@ -123,25 +123,7 @@ export class LocalStorageProgressRepository implements ProgressRepository {
   }
 }
 
-/**
- * STUB — futura implementación con Supabase (NO implementada, sin credenciales).
- * Esquema sugerido: tabla `user_achievements (user_id uuid, achievement_id text, unlocked_at date, primary key (user_id, achievement_id))`
- * con RLS «user_id = auth.uid()». El cliente Supabase y la sesión se inyectarían desde la app principal;
- * nunca poner claves de servicio en el frontend.
- * Tiempo real: `subscribe` abriría un canal `postgres_changes` filtrado por `user_id` y, en cada evento,
- * volvería a calcular la lista completa y llamaría a los listeners (mismo contrato que la versión local).
+/*
+ * La implementación con servidor (Supabase) vive en la app: src/app/repositories/supabase.ts
+ * (mismo contrato `ProgressRepository`). Este módulo no depende de Supabase.
  */
-export class SupabaseProgressRepository implements ProgressRepository {
-  async getAchievements(): Promise<Achievement[]> {
-    throw new Error('SupabaseProgressRepository: no implementado todavía');
-  }
-  async unlock(): Promise<Achievement[]> {
-    throw new Error('SupabaseProgressRepository: no implementado todavía');
-  }
-  async reset(): Promise<Achievement[]> {
-    throw new Error('SupabaseProgressRepository: no implementado todavía');
-  }
-  subscribe(_listener: ProgressListener): () => void {
-    throw new Error('SupabaseProgressRepository: no implementado todavía');
-  }
-}

@@ -87,3 +87,4 @@
 .rk--discovery .rk__medal { background: transparent !important; color: var(--acc); border: 1px solid var(--acc); font-family: Georgia, serif; }
 .rk--discovery .rk__cta { border-radius: 2px; background: transparent; color: var(--acc); border: 1px solid var(--acc); }
 .rk--discovery .rk__back, .rk--discovery .rk__ghost { border-radius: 2px; }
+.rk__live { color: #7dffb0 !important; border-color: rgba(125,255,176,.5) !important; }

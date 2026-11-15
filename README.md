@@ -28,10 +28,10 @@ Cinematic prologue → universe → Mars (Spirit · Opportunity) or Moon (ALSEP)
 ### Estado del proyecto / Roadmap
 
 - ✅ **Fase 1 — Prototipo frontend (esta versión):** prólogo, universos de Marte y la Luna en tres modos (Junior, Explorer, Discovery), tres historias interactivas (Spirit, Opportunity, ALSEP) con fuentes oficiales de la NASA, Mis logros, «Top exploradores» con datos de demostración y perfil local. Todo funciona en el navegador, sin servidor.
-- ⏭️ **Fase 2 — Backend (siguiente):**
-  - Proxy de API de IA en el servidor (las claves viven solo en el backend, nunca en el frontend ni en el repositorio).
-  - Supabase: cuentas reales, autenticación y progreso sincronizado entre dispositivos (ya existen los stubs `SupabaseProgressRepository` / `SupabaseProfileRepository` con la misma interfaz).
-  - Ranking global real (hoy «Top exploradores» usa «Datos de demostración»).
+- 🧪 **Fase 2 — Backend opcional (rama `backend`, en desarrollo):** se activa sólo si se configuran `VITE_SUPABASE_URL` y `VITE_SUPABASE_ANON_KEY`; sin ellas (o si el servidor falla) la app funciona exactamente como la Fase 1. Guía paso a paso: [`docs/BACKEND.md`](docs/BACKEND.md).
+  - **Educación personalizada con IA:** Edge Function de Supabase `adapt` que pide a Google Gemini una analogía corta que relaciona el hecho verificado de cada parada con los intereses del usuario. La clave de Gemini vive sólo en los secretos de Supabase. El hecho original y su fuente nunca cambian; la analogía se muestra debajo con la etiqueta «Analogía para ti · generada con IA» y pasa un control automático (no puede contener cifras que no estén en el hecho).
+  - **Supabase:** cuenta anónima (sin correo ni datos personales), perfil con seudónimo, progreso sincronizado y ranking global real con RLS.
+  - Pendiente: recuperar la cuenta en otro dispositivo.
 - Lo provisional y lo pendiente está detallado en [`docs/PROVISIONAL.md`](docs/PROVISIONAL.md).
 
 ### Inicio rápido (Windows)
@@ -228,6 +228,8 @@ Ver `TESTING.md` (qué se ejecutó y con qué resultado) y `docs/PROVISIONAL.md`
 
 > Todo el código de esta app (prólogo, universos, superficies, rutas interactivas, actividades, perfil, Mis logros y efectos de sonido), los scripts de prueba y esta documentación se escribieron con asistencia de IA (Grok Bot) bajo la dirección y revisión del equipo. La dirección creativa se trabajó con ayuda de ChatGPT. La IA también ayudó a buscar y resumir fuentes de la NASA; cada hecho mostrado enlaza a su fuente y el equipo debe revisarlo. Los textos narrativos son provisionales. Los gráficos se generan por código (SVG/CSS/Canvas/WebGL) y no son imágenes generadas con IA. Los efectos de sonido son síntesis procedural con Web Audio. La única grabación es el audio oficial de la NASA en el que Sofi Collis lee su ensayo; se reproduce desde nasa.gov y **no** se ha sintetizado ni modificado. La canción «I'll Be Seeing You» (última canción enviada a Opportunity) **no** se reproduce ni se aloja: sólo se menciona como hecho con enlace a NASA; el ambiente que suena es procedural. Los efectos cinematográficos de Discovery (grano, bokeh, textura) son código, no imágenes de IA. La clave secreta local se protege con hash PBKDF2 (Web Crypto). No se usan logos de la NASA.
 
+**IA en tiempo de ejecución (sólo con el backend activado):** las «analogías para ti» las genera Google Gemini en el servidor (Edge Function de Supabase) a partir de un hecho verificado y de los intereses elegidos. Siempre se muestran rotuladas «generada con IA», debajo del hecho original con su fuente de la NASA, que no se modifica. Un control automático descarta respuestas con cifras que no estén en el hecho, comillas o enlaces. Sin backend no se usa ninguna IA en la app.
+
 **Recursos generados con IA:** ninguno. La textura de la Tierra es una imagen de la NASA (ver créditos), no generada con IA. Para futuros recursos sigue disponible el mecanismo de marca de agua «IA»: con `aiGenerated: true` en una imagen, la tarjeta muestra la marca siempre. Hoy no se usa.
 
 ### Fuentes y créditos NASA
@@ -266,7 +268,7 @@ MIT (ver `LICENSE`). La imagen Blue Marble es de dominio público (NASA) y queda
 ### Project status / Roadmap
 
 - ✅ **Phase 1 — Frontend prototype (this version):** prologue, Mars and Moon universes in three modes, three interactive stories (Spirit, Opportunity, ALSEP) with official NASA sources, Mis logros, "Top exploradores" with demo data and a local profile. Runs entirely in the browser, no server.
-- ⏭️ **Phase 2 — Backend (next):** server-side AI API proxy (keys only on the server, never in the frontend or repo); Supabase accounts, auth and cross-device progress (stubs with the same interface already exist); real global ranking (today it uses demo data).
+- 🧪 **Phase 2 — Optional backend (`backend` branch, in development):** enabled only when `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` are set; without them (or if the server fails) the app behaves exactly like Phase 1. Supabase Edge Function `adapt` asks Google Gemini for a short analogy linking each stop's verified fact to the user's interests (key stored only in Supabase secrets; output labelled "generated with AI" and checked so it cannot add numbers missing from the fact). Anonymous Supabase auth (no email/personal data), nickname profile, synced progress and a real global ranking with RLS. Guide: [`docs/BACKEND.md`](docs/BACKEND.md).
 - Provisional and pending items: [`docs/PROVISIONAL.md`](docs/PROVISIONAL.md).
 
 ### Quick start (Windows)
@@ -452,6 +454,8 @@ See `TESTING.md` (what was run and the results) and `docs/PROVISIONAL.md` (what 
 ### AI-usage declaration
 
 > All the code in this app (prologue, universes, surfaces, interactive routes, activities, profile, Mis logros and sound effects), the test scripts and this documentation were written with AI assistance (Grok Bot) under the team's direction and review. Creative direction was developed with help from ChatGPT. AI also helped find and summarize NASA sources; every fact shown links to its source and must be reviewed by the team. Narrative text is provisional. Graphics are generated by code (SVG/CSS/Canvas/WebGL) and are not AI-generated images. Sound effects are procedural Web Audio synthesis. The only recording is NASA's official audio of Sofi Collis reading her essay; it is streamed from nasa.gov and was **not** synthesized or altered. The song "I'll Be Seeing You" (Opportunity's last wake-up song) is **not** played or hosted: it is only mentioned as a fact linking to NASA; the ambience is procedural. Discovery's cinematic effects (grain, bokeh, texture) are code, not AI images. The local secret key is stored only as a salted PBKDF2 hash (Web Crypto). No NASA logos are used.
+
+**Runtime AI (only when the backend is enabled):** the "analogy for you" text is generated by Google Gemini on the server (Supabase Edge Function) from a verified fact and the chosen interests. It is always labelled "generated with AI", shown below the unchanged original fact and its NASA source, and an automatic check discards outputs with numbers not present in the fact, quotes or links. Without the backend, no AI runs in the app.
 
 **AI-generated assets:** none. The Earth texture is a NASA image (see credits), not AI-generated. The "IA" watermark mechanism remains available for future assets: with `aiGenerated: true` on an image, the card always shows the mark. It is unused today.
 
