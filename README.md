@@ -2,9 +2,9 @@
 
 **NASA Space Apps Challenge 2026 · Sangolquí** · Reto *Abandoned but not Forgotten: Storytelling about NASA's Discarded Equipment on the Moon and Mars*
 
-ECOS es una experiencia web interactiva que cuenta, para tres edades, las historias de los equipos que la NASA dejó en Marte y en la Luna: los rovers **Spirit** y **Opportunity** y las estaciones **ALSEP** de Apollo. Cada dato que se muestra enlaza a una fuente oficial de la NASA.
+ECOS es una experiencia web interactiva que cuenta, para tres edades, las historias de los equipos que la NASA dejó en Marte y en la Luna: los rovers **Spirit** y **Opportunity** y el **ALSEP** del Apollo 12. Cada dato que se muestra enlaza a una fuente oficial de la NASA.
 
-ECOS is an interactive web experience that tells, for three age groups, the stories of equipment NASA left on Mars and the Moon: the **Spirit** and **Opportunity** rovers and the Apollo **ALSEP** stations. Every fact shown links to an official NASA source.
+ECOS is an interactive web experience that tells, for three age groups, the stories of equipment NASA left on Mars and the Moon: the **Spirit** and **Opportunity** rovers and the Apollo 12 **ALSEP**. Every fact shown links to an official NASA source.
 
 Prólogo cinematográfico → universo → Marte (Spirit · Opportunity) o Luna (ALSEP) → ruta interactiva → **Mis logros**.
 Cinematic prologue → universe → Mars (Spirit · Opportunity) or Moon (ALSEP) → interactive route → **Mis logros**.
@@ -15,11 +15,11 @@ Cinematic prologue → universe → Mars (Spirit · Opportunity) or Moon (ALSEP)
 | Stack | React 19 · TypeScript · Vite · Tailwind CSS 4 · Motion · three.js · Canvas 2D · Web Audio |
 | Estado / Status | Prototipo funcional con backend (Supabase + Gemini) / Working prototype with backend (Supabase + Gemini) |
 | Prototipo en línea / Live prototype | https://anyxg12.github.io/Ecos-space-apps/ (GitHub Pages) |
-| Video demo (34 s) | https://anyxg12.github.io/Ecos-space-apps/video/ — clips grabados por el equipo; editado por ChatGPT Work en DaVinci Resolve; **música y efectos de sonido generados con IA** / clips recorded by the team; edited by ChatGPT Work in DaVinci Resolve; **AI-generated music and sound effects** |
+| Video demo (34 s) | https://anyxg12.github.io/Ecos-space-apps/video/ — clips grabados por el equipo (Antony Camacho); editado por ChatGPT Work en DaVinci Resolve; **música y efectos de sonido generados con IA**; subtítulos en inglés / clips recorded by the team (Antony Camacho); edited by ChatGPT Work in DaVinci Resolve; **AI-generated music and sound effects**; English subtitles |
 | Repositorio / Repository | https://github.com/Anyxg12/Ecos-space-apps |
 | Presentación / Deck (PDF) | [ES](https://anyxg12.github.io/Ecos-space-apps/entregables/Presentacion_ES.pdf) · [EN](https://anyxg12.github.io/Ecos-space-apps/entregables/Presentation_EN.pdf) · Ficha / Project sheet: [ES+EN](https://anyxg12.github.io/Ecos-space-apps/entregables/Ficha_Proyecto_ES_EN.pdf) — se abren en el navegador / open in the browser (copias en / copies in `docs/entregables/`) |
 | Portal NASA (textos / text) | [`docs/NASA_SUBMISSION.md`](docs/NASA_SUBMISSION.md) |
-| Licencia / License | MIT (código). Material NASA: ver créditos / MIT (code). NASA material: see credits |
+| Licencia / License | MIT ([`LICENSE`](LICENSE)). Material de terceros / Third-party material: [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md) |
 | Documentos / Docs | [`CHANGELOG.md`](CHANGELOG.md) · [`TESTING.md`](TESTING.md) · [`docs/LINKS.md`](docs/LINKS.md) · [`docs/ASSETS.md`](docs/ASSETS.md) · [`docs/PROVISIONAL.md`](docs/PROVISIONAL.md) |
 
 - [Español](#español)
@@ -234,7 +234,7 @@ Ver `TESTING.md` (qué se ejecutó y con qué resultado) y `docs/PROVISIONAL.md`
 
 **IA en tiempo de ejecución (sólo con el backend activado):** las «analogías para ti» las genera Google Gemini en el servidor (Edge Function de Supabase) a partir de un hecho verificado y de los intereses elegidos. Siempre se muestran rotuladas «generada con IA», debajo del hecho original con su fuente de la NASA, que no se modifica. Un control automático descarta respuestas con cifras que no estén en el hecho, comillas o enlaces. Sin backend no se usa ninguna IA en la app.
 
-**Recursos generados con IA:** ninguno. La textura de la Tierra es una imagen de la NASA (ver créditos), no generada con IA. Para futuros recursos sigue disponible el mecanismo de marca de agua «IA»: con `aiGenerated: true` en una imagen, la tarjeta muestra la marca siempre. Hoy no se usa.
+**Recursos generados con IA:** ninguna imagen generada con IA. El único audio generado con IA es la música de fondo y los efectos de sonido del video demo (no están en la app). La textura de la Tierra es una imagen de la NASA (ver créditos), no generada con IA. Para futuros recursos sigue disponible el mecanismo de marca de agua «IA»: con `aiGenerated: true` en una imagen, la tarjeta muestra la marca siempre. Hoy no se usa.
 
 ### Fuentes y créditos NASA
 
@@ -263,7 +263,7 @@ Ver `TESTING.md` (qué se ejecutó y con qué resultado) y `docs/PROVISIONAL.md`
 
 ### Licencia
 
-MIT (ver `LICENSE`). La imagen Blue Marble es de dominio público (NASA) y queda fuera de la licencia MIT.
+MIT (ver [`LICENSE`](LICENSE)). El material de terceros (imagen Blue Marble de la NASA, de dominio público; hechos de fuentes NASA; audio oficial de la NASA) queda fuera de la licencia MIT: ver [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md).
 
 ---
 
@@ -461,7 +461,7 @@ See `TESTING.md` (what was run and the results) and `docs/PROVISIONAL.md` (what 
 
 **Runtime AI (only when the backend is enabled):** the "analogy for you" text is generated by Google Gemini on the server (Supabase Edge Function) from a verified fact and the chosen interests. It is always labelled "generated with AI", shown below the unchanged original fact and its NASA source, and an automatic check discards outputs with numbers not present in the fact, quotes or links. Without the backend, no AI runs in the app.
 
-**AI-generated assets:** none. The Earth texture is a NASA image (see credits), not AI-generated. The "IA" watermark mechanism remains available for future assets: with `aiGenerated: true` on an image, the card always shows the mark. It is unused today.
+**AI-generated assets:** no AI-generated images. The only AI-generated audio is the demo video's background music and sound effects (not in the app). The Earth texture is a NASA image (see credits), not AI-generated. The "IA" watermark mechanism remains available for future assets: with `aiGenerated: true` on an image, the card always shows the mark. It is unused today.
 
 ### NASA sources and credits
 
@@ -477,4 +477,4 @@ See `TESTING.md` (what was run and the results) and `docs/PROVISIONAL.md` (what 
 
 ### License
 
-MIT (see `LICENSE`). The Blue Marble image is public domain (NASA) and is excluded from the MIT license.
+MIT (see [`LICENSE`](LICENSE)). Third-party material (NASA's public-domain Blue Marble image, facts from NASA sources, official NASA audio) is excluded from the MIT license: see [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md).

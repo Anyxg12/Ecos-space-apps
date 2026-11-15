@@ -19,18 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
----------------------------------------------------------------------------
-Third-party material (not covered by the MIT license above)
-
-src/achievements/assets/earth-blue-marble-2048.jpg
-  "Blue Marble: Land Surface, Shallow Water, and Shaded Topography",
-  NASA Visible Earth (https://visibleearth.nasa.gov/images/57752).
-  NASA imagery is generally not subject to copyright in the United States
-  (public domain). Credit: NASA Goddard Space Flight Center / Visible Earth.
-  Use of NASA material does not imply NASA endorsement. No NASA logos are used.
-
-src/data/spirit-facts.json
-  Facts compiled from public NASA/JPL web pages; each entry includes its
-  source URL. The facts belong to their sources; only the compilation format
-  is part of this project.
