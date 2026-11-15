@@ -3,6 +3,7 @@ import { Destination, EcosHostContext, EcosPrologue, prologueStorage, type EcosH
 import { useProgress } from './achievements/data/useProgress';
 import { progressRepo, seenStore } from './app/progress';
 import { sound } from './prologue/audio/soundEngine';
+import { syncProfile } from './app/repositories';
 
 const LogrosScreen = lazy(() => import('./app/LogrosScreen'));
 const RankingScreen = lazy(() => import('./app/RankingScreen'));
@@ -25,6 +26,11 @@ export default function App() {
   const [runId, setRunId] = useState(0);
   const [rankFrom, setRankFrom] = useState<'universe' | 'logros'>('universe');
   useUiSounds();
+  // con backend: el perfil existente se copia una vez al arrancar (para aparecer en el ranking global)
+  useEffect(() => {
+    if (profile) void syncProfile(profile);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   const progress = useProgress(progressRepo);
   const unlockRef = useRef(progress.unlock);
   unlockRef.current = progress.unlock;
@@ -43,6 +49,7 @@ export default function App() {
   const done = useCallback((p: ExplorerProfile) => {
     prologueStorage.markSeen(p);
     setProfile(p);
+    void syncProfile(p);
     void unlockRef.current('horizonte');
     setView('universe');
   }, []);
@@ -55,8 +62,9 @@ export default function App() {
       openRanking: () => (setRankFrom('universe'), setView('ranking')),
       unlock: (id) => void unlockRef.current(id),
       isUnlocked: (id) => statusMap.get(id) === 'unlocked',
+      interests: profile?.interests,
     }),
-    [statusMap],
+    [statusMap, profile?.interests],
   );
 
   // ids desbloqueados desde la última visita a Mis logros (se encienden al llegar)
@@ -70,6 +78,7 @@ export default function App() {
   const updateProfile = useCallback((p: ExplorerProfile) => {
     prologueStorage.markSeen(p);
     setProfile(p);
+    void syncProfile(p);
   }, []);
   const dest = (p: ExplorerProfile) => <Destination profile={p} reducedMotion={reducedMotion} onReplay={replay} onReset={reset} onProfileChange={updateProfile} />;
 

@@ -6,15 +6,15 @@ Estado al 15 nov 2026. Lo que aparece aquí **no** debe presentarse como termina
 - Toda la narración de las tres rutas (Spirit, Opportunity, ALSEP): frases cortas que reformulan los hechos verificados. Rótulo «Contenido provisional» visible en cada ruta. El equipo debe revisar el tono y la exactitud.
 - Traducción al español del ensayo de Sofi Collis: del equipo ECOS, rotulada «no oficial».
 - Insignias «Huellas de Spirit», «Huellas de Opportunity» y «Ecos de la Luna»: diseño provisional.
-- «Top exploradores» y el bloque del perfil: **datos de demostración** (seudónimos ficticios marcados «(demo)»). Sólo la fila «tú» usa datos reales (estrellas de este dispositivo). No hay ranking global.
+- «Top exploradores»: con backend muestra el ranking real («● En vivo», sólo seudónimo y estrellas, desde Supabase). Si el backend no responde, vuelve a la tabla rotulada «Datos de demostración» (seudónimos ficticios marcados «(demo)»).
 - Sismógrafo de la parada «¡La Luna tiembla!»: forma de onda y sonido **ilustrativos** (no son datos reales del sismómetro). El texto describe el **plan** del dossier de prensa de Apollo 12 (1969): impacto de la etapa de ascenso a unas 5 millas náuticas, equivalente a una tonelada de TNT.
 - Transmisión de la parada «Última canción»: animación ilustrativa; la canción real no se reproduce.
 - Disposición de los seis instrumentos alrededor de la estación central en la actividad «Conecta los instrumentos» (ALSEP), de los sitios en el mini-mapa de Marte y de las piezas en la escena del equipo abandonado: **ilustrativas, no a escala** (indicado en pantalla).
 
 ## No implementado (fuera de alcance de este MVP)
 - Clave secreta: **sólo local** (hash PBKDF2-SHA-256 con sal en este navegador). No hay recuperación si se olvida; se puede quitar la clave sin perder progreso. Cualquiera con acceso al dispositivo podría borrar los datos del navegador: es una protección ligera, no una cuenta.
-- Clave de recuperación / acceso entre dispositivos: «Clave de recuperación — Pendiente» (llegará con Supabase). Si se borran los datos del navegador, el perfil y el progreso se pierden.
-- Autenticación, base de datos, Supabase (sólo existen stubs `SupabaseProgressRepository`/`SupabaseProfileRepository` que rechazan con «Pendiente»; sin credenciales), API de IA, chat.
+- Clave de recuperación / acceso entre dispositivos: pendiente. La cuenta de Supabase es anónima y vive en este navegador; si se borran sus datos, se pierde el acceso a ese progreso.
+- Chat con IA (no existe; la IA sólo genera la analogía corta bajo cada hecho verificado). Backend implementado el 15 nov 2026: ver `docs/BACKEND.md`.
 - Señales futuras en Marte y la Luna: son marcadores visuales bloqueados; no abren nada ni nombran misiones.
 - «Todos los artefactos de Marte»: meta futura bloqueada; no se puede conseguir.
 
@@ -30,5 +30,6 @@ Estado al 15 nov 2026. Lo que aparece aquí **no** debe presentarse como termina
 - La última canción: NASA History la describe como «popularized in 1944 by Bing Crosby and then Billie Holiday»; NPR y otros medios dicen que se envió la versión de Billie Holiday. En ECOS se usa la redacción de NASA (no se afirma qué versión).
 
 ## No probado
+- Analogías con IA (Gemini): se probaron en vivo, pero el texto es generado y puede variar; el hecho verificado de la NASA siempre se muestra aparte y la IA no puede añadir cifras nuevas.
 - Volumen real de los efectos de sonido (se subió ~2,5× con compresor y limitador, pero nadie lo ha escuchado en el entorno de pruebas).
 - GPU reales (fps), Safari, Firefox, móviles físicos, lectores de pantalla reales, sonido escuchado por una persona, reproducción real del audio de nasa.gov en el navegador de pruebas (el entorno de QA no reproduce audio; sí se verificó que la URL responde y admite rangos).

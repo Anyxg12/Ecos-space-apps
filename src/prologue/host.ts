@@ -1,4 +1,5 @@
 import { createContext, useContext } from 'react';
+import type { InterestId } from './state/types';
 
 /**
  * Puente opcional entre el prólogo/universo y la app que lo aloja (navegación y progreso).
@@ -10,6 +11,8 @@ export interface EcosHost {
   openRanking?: () => void;
   unlock: (id: string) => void;
   isUnlocked: (id: string) => boolean;
+  /** Intereses del perfil (para las analogías personalizadas con IA, si hay backend). */
+  interests?: InterestId[];
 }
 export const EcosHostContext = createContext<EcosHost | null>(null);
 export const useEcosHost = () => useContext(EcosHostContext);
