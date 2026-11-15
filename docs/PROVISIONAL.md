@@ -4,7 +4,7 @@ Estado al 15 nov 2026. Lo que aparece aquí **no** debe presentarse como termina
 
 ## Contenido provisional (rotulado en la app)
 - Toda la narración de las tres rutas (Spirit, Opportunity, ALSEP): frases cortas que reformulan los hechos verificados. Rótulo «Contenido provisional» visible en cada ruta. El equipo debe revisar el tono y la exactitud.
-- Traducción al español del ensayo de Sofi Collis: del equipo ECOS, rotulada «no oficial».
+- Traducción al español del ensayo de Sofi Collis: del equipo The Last Neuron, rotulada «no oficial».
 - Insignias «Huellas de Spirit», «Huellas de Opportunity» y «Ecos de la Luna»: diseño provisional.
 - «Top exploradores»: con backend muestra el ranking real («● En vivo», sólo seudónimo y estrellas, desde Supabase). Si el backend no responde, vuelve a la tabla rotulada «Datos de demostración» (seudónimos ficticios marcados «(demo)»).
 - Sismógrafo de la parada «¡La Luna tiembla!»: forma de onda y sonido **ilustrativos** (no son datos reales del sismómetro). El texto describe el **plan** del dossier de prensa de Apollo 12 (1969): impacto de la etapa de ascenso a unas 5 millas náuticas, equivalente a una tonelada de TNT.

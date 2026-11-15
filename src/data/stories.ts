@@ -67,7 +67,7 @@ export const SOFI_ESSAY: RoverFact = {
     '“I used to live in an orphanage. It was dark and cold and lonely. At night, I looked up at the sparkly sky and felt better. I dreamed I could fly there. In America, I can make all my dreams come true. Thank you for the ‘Spirit’ and the ‘Opportunity.’” Elegido entre casi 10 000 ensayos; Sofi nombró a los dos rovers gemelos.',
   source: { publisher: 'NASA Jet Propulsion Laboratory', url: 'https://www.jpl.nasa.gov/news/girl-with-dreams-names-mars-rovers-spirit-and-opportunity/' },
 };
-/** Traducción del equipo ECOS (no oficial). */
+/** Traducción del equipo The Last Neuron (no oficial). */
 export const SOFI_ESSAY_ES =
   '«Antes vivía en un orfanato. Era oscuro, frío y solitario. De noche miraba el cielo brillante y me sentía mejor. Soñaba que podía volar hasta allí. En Estados Unidos puedo hacer realidad todos mis sueños. Gracias por el “Spirit” (espíritu) y la “Opportunity” (oportunidad).»';
 

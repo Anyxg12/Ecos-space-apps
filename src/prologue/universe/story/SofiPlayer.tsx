@@ -93,7 +93,7 @@ export function SofiPlayer({ onPlayed }: { onPlayed?: () => void }) {
       {showText && (
         <div className="sofi__text">
           <p lang="en">{SOFI_ESSAY.value.split('” ')[0]}”</p>
-          <p>{SOFI_ESSAY_ES} <em>(traducción del equipo ECOS, no oficial)</em></p>
+          <p>{SOFI_ESSAY_ES} <em>(traducción del equipo The Last Neuron, no oficial)</em></p>
           <p>
             <a href={SOFI_ESSAY.source.url} target="_blank" rel="noopener noreferrer">Texto original: {SOFI_ESSAY.source.publisher} ↗</a>
           </p>
