@@ -32,6 +32,11 @@ jobs:
         env:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL || vars.VITE_SUPABASE_URL || 'https://ztrrxxuvspvlssfpeyjv.supabase.co' }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY || vars.VITE_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp0cnJ4eHV2c3B2bHNzZnBleWp2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTQ3MzQwNjIsImV4cCI6MjExMDMxMDA2Mn0.fOZVV2gpr1BruWLfYAqzCCGQfMvEPjDLtlRs7-jyFr0' }}
+      # Entregables públicos (se abren directo en el navegador, sin iniciar sesión): PDFs y video demo.
+      - run: |
+          mkdir -p dist/entregables dist/video
+          cp docs/entregables/*.pdf dist/entregables/
+          cp docs/media/ecos-demo.mp4 dist/video/ecos-demo.mp4
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

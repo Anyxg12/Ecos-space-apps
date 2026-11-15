@@ -15,9 +15,9 @@ Cinematic prologue → universe → Mars (Spirit · Opportunity) or Moon (ALSEP)
 | Stack | React 19 · TypeScript · Vite · Tailwind CSS 4 · Motion · three.js · Canvas 2D · Web Audio |
 | Estado / Status | Prototipo funcional con backend (Supabase + Gemini) / Working prototype with backend (Supabase + Gemini) |
 | Prototipo en línea / Live prototype | https://anyxg12.github.io/Ecos-space-apps/ (GitHub Pages) |
-| Video demo (34 s) | https://github.com/Anyxg12/Ecos-space-apps/blob/main/docs/media/ecos-demo.mp4 — clips grabados por el equipo; editado por ChatGPT Work en DaVinci Resolve; **música y efectos de sonido generados con IA** / clips recorded by the team; edited by ChatGPT Work in DaVinci Resolve; **AI-generated music and sound effects** |
+| Video demo (34 s) | https://anyxg12.github.io/Ecos-space-apps/video/ — clips grabados por el equipo; editado por ChatGPT Work en DaVinci Resolve; **música y efectos de sonido generados con IA** / clips recorded by the team; edited by ChatGPT Work in DaVinci Resolve; **AI-generated music and sound effects** |
 | Repositorio / Repository | https://github.com/Anyxg12/Ecos-space-apps |
-| Presentación / Deck (PDF) | [ES](docs/entregables/Presentacion_ES.pdf) · [EN](docs/entregables/Presentation_EN.pdf) · Ficha / Project sheet: [ES+EN](docs/entregables/Ficha_Proyecto_ES_EN.pdf) |
+| Presentación / Deck (PDF) | [ES](https://anyxg12.github.io/Ecos-space-apps/entregables/Presentacion_ES.pdf) · [EN](https://anyxg12.github.io/Ecos-space-apps/entregables/Presentation_EN.pdf) · Ficha / Project sheet: [ES+EN](https://anyxg12.github.io/Ecos-space-apps/entregables/Ficha_Proyecto_ES_EN.pdf) — se abren en el navegador / open in the browser (copias en / copies in `docs/entregables/`) |
 | Portal NASA (textos / text) | [`docs/NASA_SUBMISSION.md`](docs/NASA_SUBMISSION.md) |
 | Licencia / License | MIT (código). Material NASA: ver créditos / MIT (code). NASA material: see credits |
 | Documentos / Docs | [`CHANGELOG.md`](CHANGELOG.md) · [`TESTING.md`](TESTING.md) · [`docs/LINKS.md`](docs/LINKS.md) · [`docs/ASSETS.md`](docs/ASSETS.md) · [`docs/PROVISIONAL.md`](docs/PROVISIONAL.md) |

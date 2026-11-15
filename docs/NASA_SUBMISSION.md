@@ -10,7 +10,7 @@ ECOS — Stories that keep traveling
 ECOS is a free web app that turns NASA's records of the Spirit and Opportunity rovers on Mars and the Apollo 12 ALSEP station on the Moon into interactive stories for three ages (7–11, 12–17, 18+). Users explore each mission stop by stop on an illustrated route with minigames, sound and achievements. Every fact links to its official NASA source, and an AI analogy (always labeled) connects that fact to the user's own interests, without changing it. No sign-up, no personal data, no permissions.
 
 ## Link to Project Demo
-https://github.com/Anyxg12/Ecos-space-apps/blob/main/docs/entregables/Presentation_EN.pdf
+https://anyxg12.github.io/Ecos-space-apps/entregables/Presentation_EN.pdf
 (7-slide deck in English, PDF.)
 
 ## Link to Final Project
@@ -49,5 +49,5 @@ Full list with where each link is used: https://github.com/Anyxg12/Ecos-space-ap
 - **Dola AI:** a few art-direction reference sketches; they are not used in the app or the deliverables.
 - **Google Gemini (in the app):** generates the "analogy for you" text at runtime; always labeled "generated with AI", shown below the unchanged NASA fact.
 - **What the team (The Last Neuron) did:** the idea, the purpose (a free, personalized educational web app), the features and design decisions; supervised and reviewed the generated code, tested the app and found and fixed bugs together with the AI.
-- **Demo video:** the team (Antony Camacho) recorded the clips with the real app running; ChatGPT Work edited them in DaVinci Resolve; **the background music and sound effects were generated with AI**. Sofi's voice in it is NASA's official audio.
+- **Demo video:** the team (Antony Camacho) recorded the clips with the real app running; ChatGPT Work edited them in DaVinci Resolve; **the background music and sound effects were generated with AI**. Sofi's voice in it is NASA's official audio. Watch it (plays in the browser, no login): https://anyxg12.github.io/Ecos-space-apps/video/
 - **No AI-generated images or video** are used in the app, the deck or the demo video, and the app itself plays no AI audio (its sound is procedural Web Audio). Graphics are drawn by code (SVG/CSS/Canvas/WebGL). No NASA logos, flags or identifiers were created or altered with AI.
