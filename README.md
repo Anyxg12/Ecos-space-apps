@@ -12,8 +12,9 @@ Cinematic prologue → universe → Mars (Spirit · Opportunity) or Moon (ALSEP)
 | | |
 |---|---|
 | Stack | React 19 · TypeScript · Vite · Tailwind CSS 4 · Motion · three.js · Canvas 2D · Web Audio |
-| Estado / Status | Prototipo frontend terminado; backend en la siguiente fase / Frontend prototype done; backend is the next phase |
-| Prototipo en línea / Live prototype | https://anyxg12.github.io/Ecos-space-apps/ (GitHub Pages; activo tras el primer despliegue / live after the first deploy) |
+| Estado / Status | Prototipo funcional con backend (Supabase + Gemini) / Working prototype with backend (Supabase + Gemini) |
+| Prototipo en línea / Live prototype | https://anyxg12.github.io/Ecos-space-apps/ (GitHub Pages) |
+| Video demo (34 s) | https://github.com/Anyxg12/Ecos-space-apps/blob/main/docs/media/ecos-demo.mp4 |
 | Repositorio / Repository | https://github.com/Anyxg12/Ecos-space-apps |
 | Licencia / License | MIT (código). Material NASA: ver créditos / MIT (code). NASA material: see credits |
 | Documentos / Docs | [`CHANGELOG.md`](CHANGELOG.md) · [`TESTING.md`](TESTING.md) · [`docs/LINKS.md`](docs/LINKS.md) · [`docs/ASSETS.md`](docs/ASSETS.md) · [`docs/PROVISIONAL.md`](docs/PROVISIONAL.md) |
@@ -59,7 +60,7 @@ La app es 100 % estática: basta con publicar `dist/`.
 - **Vercel:** *Add New → Project →* importar el repositorio. Vercel detecta Vite: *Build command* `npm run build`, *Output directory* `dist`. No hace falta configuración extra ni variables de entorno.
 - **Netlify u otro hosting estático:** `npm run build` y subir la carpeta `dist/`.
 
-No hay claves ni secretos que configurar: esta versión no usa backend, autenticación ni APIs de IA.
+Para el despliegue estático no hace falta configurar secretos. El backend opcional (Supabase + Gemini) se describe en [`docs/BACKEND.md`](docs/BACKEND.md); la clave de Gemini vive sólo en Supabase.
 
 ### Subir a GitHub desde Windows (PowerShell)
 
@@ -167,11 +168,11 @@ scripts/qa.mjs         Recorrido Playwright (opcional; requiere playwright-core)
 
 Cuando cambia `achievements` de `locked` a `unlocked`, la estrella se enciende en vivo.
 
-### Contrato de tiempo real (notas de integración para Antigravity)
+### Contrato de tiempo real (notas de integración)
 
 - `ProgressRepository` (`src/achievements/data/progressStore.ts`) expone `getAchievements()`, `unlock(id)`, `reset()` y `subscribe(cb)` (el listener recibe la lista completa en cada cambio).
 - Hoy se usa `LocalStorageProgressRepository`, que sincroniza pestañas con el evento `storage` (probado).
-- **Supabase (no implementado):** ya existe el stub `SupabaseProgressRepository` en el mismo archivo, que lanza «no implementado». Hay que completarlo con la misma interfaz.
+- **Supabase (implementado):** el progreso se guarda primero en el navegador y se copia al servidor (`src/app/repositories/supabase.ts`). Detalles en `docs/BACKEND.md`.
   - `unlock` → `upsert` en la tabla `user_achievements (user_id, achievement_id, unlocked_at)`, con RLS `user_id = auth.uid()`. Nunca pongas claves de servicio en el frontend.
   - `subscribe` → canal Realtime `postgres_changes` filtrado por `user_id`.
   - Sustitúyelo en `src/app/progress.ts`. No hacen falta otros cambios.
@@ -213,9 +214,9 @@ Cuando cambia `achievements` de `locked` a `unlocked`, la estrella se enciende e
 
 Ver `TESTING.md` (qué se ejecutó y con qué resultado) y `docs/PROVISIONAL.md` (lo que es provisional o no funciona todavía).
 
-### Integración en Antigravity (Windows)
+### Abrir el proyecto en Windows
 
-1. Clona el repositorio (o descomprime `ecos-app.zip`) en una carpeta sin espacios raros (p. ej. `C:\ecos\ecos-app`) y ábrela en Antigravity.
+1. Clona el repositorio (o descomprime `ecos-app.zip`) en una carpeta sin espacios raros (p. ej. `C:\ecos\ecos-app`) y ábrela en tu editor.
 2. En la terminal integrada (PowerShell): `npm.cmd install` y luego `npm.cmd run dev`. Abre http://localhost:5173.
 3. Para producción: `npm.cmd run build` → carpeta `dist/` (estática, `base: './'`).
 4. Si quieres integrar sólo partes:
@@ -226,7 +227,7 @@ Ver `TESTING.md` (qué se ejecutó y con qué resultado) y `docs/PROVISIONAL.md`
 
 ### Declaración de uso de IA
 
-> Todo el código de esta app (prólogo, universos, superficies, rutas interactivas, actividades, perfil, Mis logros y efectos de sonido), los scripts de prueba y esta documentación se escribieron con asistencia de IA (Grok Bot) bajo la dirección y revisión del equipo. La dirección creativa se trabajó con ayuda de ChatGPT. La IA también ayudó a buscar y resumir fuentes de la NASA; cada hecho mostrado enlaza a su fuente y el equipo debe revisarlo. Los textos narrativos son provisionales. Los gráficos se generan por código (SVG/CSS/Canvas/WebGL) y no son imágenes generadas con IA. Los efectos de sonido son síntesis procedural con Web Audio. La única grabación es el audio oficial de la NASA en el que Sofi Collis lee su ensayo; se reproduce desde nasa.gov y **no** se ha sintetizado ni modificado. La canción «I'll Be Seeing You» (última canción enviada a Opportunity) **no** se reproduce ni se aloja: sólo se menciona como hecho con enlace a NASA; el ambiente que suena es procedural. Los efectos cinematográficos de Discovery (grano, bokeh, textura) son código, no imágenes de IA. La clave secreta local se protege con hash PBKDF2 (Web Crypto). No se usan logos de la NASA.
+> Todo el código de esta app (prólogo, universos, superficies, rutas interactivas, actividades, perfil, Mis logros y efectos de sonido), los scripts de prueba y esta documentación se escribieron con asistencia de IA (Grok Bot) bajo la dirección del equipo ECOS. La idea, el propósito (una web educativa gratuita y personalizada), las funcionalidades y las decisiones fueron del equipo; el equipo supervisó y revisó el código generado, probó la app y encontró y corrigió errores junto con la IA. La dirección artística, la narrativa y la coordinación se trabajaron con ayuda de ChatGPT Work (sin generar imágenes). La IA también ayudó a buscar y resumir fuentes de la NASA; cada hecho mostrado enlaza a su fuente y el equipo debe revisarlo. Los textos narrativos son provisionales. Los gráficos se generan por código (SVG/CSS/Canvas/WebGL) y no son imágenes generadas con IA. Los efectos de sonido son síntesis procedural con Web Audio. La única grabación es el audio oficial de la NASA en el que Sofi Collis lee su ensayo; se reproduce desde nasa.gov y **no** se ha sintetizado ni modificado. La canción «I'll Be Seeing You» (última canción enviada a Opportunity) **no** se reproduce ni se aloja: sólo se menciona como hecho con enlace a NASA; el ambiente que suena es procedural. Los efectos cinematográficos de Discovery (grano, bokeh, textura) son código, no imágenes de IA. La clave secreta local se protege con hash PBKDF2 (Web Crypto). No se usan logos de la NASA.
 
 **IA en tiempo de ejecución (sólo con el backend activado):** las «analogías para ti» las genera Google Gemini en el servidor (Edge Function de Supabase) a partir de un hecho verificado y de los intereses elegidos. Siempre se muestran rotuladas «generada con IA», debajo del hecho original con su fuente de la NASA, que no se modifica. Un control automático descarta respuestas con cifras que no estén en el hecho, comillas o enlaces. Sin backend no se usa ninguna IA en la app.
 
@@ -296,7 +297,7 @@ The app is fully static: publish `dist/`.
 - **Vercel:** *Add New → Project →* import the repository. Vercel detects Vite: build command `npm run build`, output directory `dist`. No extra config or environment variables needed.
 - **Netlify or any static host:** `npm run build` and upload `dist/`.
 
-There are no keys or secrets to configure: this version has no backend, authentication or AI APIs.
+The static deploy needs no secrets. The optional backend (Supabase + Gemini) is described in [`docs/BACKEND.md`](docs/BACKEND.md); the Gemini key lives only in Supabase.
 
 ### Push to GitHub from Windows (PowerShell)
 
@@ -394,11 +395,11 @@ scripts/qa.mjs         Playwright walkthrough (optional; needs playwright-core)
 
 When an item in `achievements` changes from `locked` to `unlocked`, its star ignites live.
 
-### Realtime contract (integration notes for Antigravity)
+### Realtime contract (integration notes)
 
 - `ProgressRepository` (`src/achievements/data/progressStore.ts`) exposes `getAchievements()`, `unlock(id)`, `reset()` and `subscribe(cb)` (the listener receives the full list on every change).
 - The app currently uses `LocalStorageProgressRepository`, which syncs tabs through the `storage` event (tested).
-- **Supabase (not implemented):** a `SupabaseProgressRepository` stub already exists in the same file and throws "no implementado". Complete it with the same interface.
+- **Supabase (implemented):** progress is saved locally first and copied to the server (`src/app/repositories/supabase.ts`). Details in `docs/BACKEND.md`.
   - `unlock` → `upsert` into a `user_achievements (user_id, achievement_id, unlocked_at)` table, with RLS `user_id = auth.uid()`. Never ship service keys in the frontend.
   - `subscribe` → a Realtime `postgres_changes` channel filtered by `user_id`.
   - Swap it in `src/app/progress.ts`. Nothing else needs to change.
@@ -440,9 +441,9 @@ When an item in `achievements` changes from `locked` to `unlocked`, its star ign
 
 See `TESTING.md` (what was run and the results) and `docs/PROVISIONAL.md` (what is provisional or not working yet).
 
-### Integrating in Antigravity (Windows)
+### Opening the project on Windows
 
-1. Clone the repository (or unzip `ecos-app.zip`, e.g. `C:\ecos\ecos-app`) and open the folder in Antigravity.
+1. Clone the repository (or unzip `ecos-app.zip`, e.g. `C:\ecos\ecos-app`) and open the folder in your editor.
 2. In the integrated terminal (PowerShell): `npm.cmd install`, then `npm.cmd run dev`. Open http://localhost:5173.
 3. Production: `npm.cmd run build` → static `dist/` folder (`base: './'`).
 4. To integrate only parts:
@@ -453,7 +454,7 @@ See `TESTING.md` (what was run and the results) and `docs/PROVISIONAL.md` (what 
 
 ### AI-usage declaration
 
-> All the code in this app (prologue, universes, surfaces, interactive routes, activities, profile, Mis logros and sound effects), the test scripts and this documentation were written with AI assistance (Grok Bot) under the team's direction and review. Creative direction was developed with help from ChatGPT. AI also helped find and summarize NASA sources; every fact shown links to its source and must be reviewed by the team. Narrative text is provisional. Graphics are generated by code (SVG/CSS/Canvas/WebGL) and are not AI-generated images. Sound effects are procedural Web Audio synthesis. The only recording is NASA's official audio of Sofi Collis reading her essay; it is streamed from nasa.gov and was **not** synthesized or altered. The song "I'll Be Seeing You" (Opportunity's last wake-up song) is **not** played or hosted: it is only mentioned as a fact linking to NASA; the ambience is procedural. Discovery's cinematic effects (grain, bokeh, texture) are code, not AI images. The local secret key is stored only as a salted PBKDF2 hash (Web Crypto). No NASA logos are used.
+> All the code in this app (prologue, universes, surfaces, interactive routes, activities, profile, Mis logros and sound effects), the test scripts and this documentation were written with AI assistance (Grok Bot) under the ECOS team's direction. The idea, the purpose (a free, personalized educational web app), the features and the decisions came from the team; the team supervised and reviewed the generated code, tested the app and found and fixed bugs together with the AI. Art direction, narrative and coordination were developed with help from ChatGPT Work (no image generation). AI also helped find and summarize NASA sources; every fact shown links to its source and must be reviewed by the team. Narrative text is provisional. Graphics are generated by code (SVG/CSS/Canvas/WebGL) and are not AI-generated images. Sound effects are procedural Web Audio synthesis. The only recording is NASA's official audio of Sofi Collis reading her essay; it is streamed from nasa.gov and was **not** synthesized or altered. The song "I'll Be Seeing You" (Opportunity's last wake-up song) is **not** played or hosted: it is only mentioned as a fact linking to NASA; the ambience is procedural. Discovery's cinematic effects (grain, bokeh, texture) are code, not AI images. The local secret key is stored only as a salted PBKDF2 hash (Web Crypto). No NASA logos are used.
 
 **Runtime AI (only when the backend is enabled):** the "analogy for you" text is generated by Google Gemini on the server (Supabase Edge Function) from a verified fact and the chosen interests. It is always labelled "generated with AI", shown below the unchanged original fact and its NASA source, and an automatic check discards outputs with numbers not present in the fact, quotes or links. Without the backend, no AI runs in the app.
 
