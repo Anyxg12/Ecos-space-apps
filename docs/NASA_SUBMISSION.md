@@ -45,9 +45,9 @@ Full list with where each link is used: https://github.com/Anyxg12/Ecos-space-ap
 
 ## Use of Artificial Intelligence (AI)
 - **Grok Bot:** wrote and automated the app's code, QA test scripts and documentation, wrote and laid out the deck, the project sheet and these submission texts (reviewed by the team), and helped find and summarize NASA sources.
-- **ChatGPT Work:** art and creative direction, narrative and coordination (no image generation).
+- **ChatGPT Work:** art and creative direction, narrative and coordination (no image generation); it also assisted in generating the demo video's AI music and sound effects.
 - **Dola AI:** a few art-direction reference sketches; they are not used in the app or the deliverables.
 - **Google Gemini (in the app):** generates the "analogy for you" text at runtime; always labeled "generated with AI", shown below the unchanged NASA fact.
 - **What the team (The Last Neuron) did:** the idea, the purpose (a free, personalized educational web app), the features and design decisions; supervised and reviewed the generated code, tested the app and found and fixed bugs together with the AI.
-- **Demo video:** edited by the team (Antony Camacho) in DaVinci Resolve from real app captures; **its background music and sound effects were generated with AI**. Sofi's voice in it is NASA's official audio.
+- **Demo video:** edited by the team (Antony Camacho) in DaVinci Resolve from real app captures; transitions and visual effects are DaVinci Resolve’s (no AI); **its background music and sound effects were generated with AI, assisted by ChatGPT Work**. Sofi's voice in it is NASA's official audio.
 - **No AI-generated images or video** are used in the app, the deck or the demo video, and the app itself plays no AI audio (its sound is procedural Web Audio). Graphics are drawn by code (SVG/CSS/Canvas/WebGL). No NASA logos, flags or identifiers were created or altered with AI.
