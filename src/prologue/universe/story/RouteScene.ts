@@ -376,7 +376,7 @@ export class RouteScene {
   private drawSky(horizon: number, camX: number) {
     const { ctx, W, pal } = this;
     const x = W * (W < 700 ? 0.76 : 0.5) - camX * 0.8;
-    let y = horizon * (W < 700 ? 0.55 : 0.42);
+    let y = horizon * (W < 700 ? 0.74 : 0.42); // en móvil, por debajo de la fila de paradas
     if (this.o.place === 'luna' && !this.o.reduced) {
       // salida de la Tierra (Earthrise) al empezar la ruta: sube desde detrás del horizonte lunar
       const k = Math.min(1, this.t / 5 + this.pos * 0.6);
@@ -955,7 +955,8 @@ export class RouteScene {
     ctx.textBaseline = 'middle';
     ctx.fillText(legacy ? '★' : done ? '✓' : String(i + 1), top.x, top.y + 1);
     // rótulo
-    const showLabel = i === this.active || (i === this.active + 1 && base.dz < 200);
+    // en pantallas estrechas sólo se rotula la parada activa (los rótulos lejanos se amontonaban)
+    const showLabel = i === this.active || (this.W >= 700 && i === this.active + 1 && base.dz < 200);
     if (showLabel && this.o.labels[i]) {
       ctx.font = `${this.o.variant === 'discovery' ? 'italic 400' : '700'} ${Math.max(10, Math.min(15, s * 0.9))}px ${this.o.variant === 'discovery' ? 'Georgia, serif' : this.o.variant === 'explorer' ? 'ui-monospace, monospace' : 'system-ui, sans-serif'}`;
       ctx.fillStyle = this.o.variant === 'junior' ? '#fff4e2' : pal.label;

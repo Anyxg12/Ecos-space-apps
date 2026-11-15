@@ -317,7 +317,7 @@
   .arrive--marte .sig--primary:not(.sig--mission) { left: 30% !important; top: 56% !important; }
   .arrive--marte .sig--mission { left: 72% !important; top: 73% !important; }
   .sig--mission .sig__glyph { width: 80px; }
-  .sig--future { transform: translate(-50%, -50%) scale(.82); }
+  .arrive__signals .sig--future { transform: translate(-50%, -50%) scale(.7); left: var(--mx, var(--x)); top: var(--my, var(--y)); }
   .arrive__drawer { top: auto; max-height: 70dvh; left: 8px; right: 8px; width: auto; bottom: 8px; }
 }
 
@@ -417,7 +417,7 @@
 .arrive--junior .sig--mission .sig__glyph { color: #9a7bff; }
 
 /* Señales futuras: tenues, con candado, sin nombre ni fecha */
-.sig--future { cursor: default; gap: 4px; opacity: .55; }
+.sig--future { cursor: default; gap: 4px; opacity: .55; left: var(--x); top: var(--y); }
 .sig__glow { position: absolute; left: 50%; top: 18px; width: 64px; height: 64px; margin: -32px 0 0 -32px; border-radius: 50%; background: radial-gradient(circle, color-mix(in srgb, var(--sig, #ffd23f) 45%, transparent), transparent 70%); animation: sigfut 3.8s ease-in-out infinite; }
 @keyframes sigfut { 0%, 100% { opacity: .35; transform: scale(.85); } 50% { opacity: .8; transform: scale(1.1); } }
 .sig__lock { position: relative; width: 34px; height: 34px; fill: none; stroke: var(--sig, #ffd23f); stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; padding: 6px; border-radius: 50%; background: rgba(0,0,0,.45); border: 1px dashed color-mix(in srgb, var(--sig, #ffd23f) 70%, transparent); }

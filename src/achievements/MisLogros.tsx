@@ -309,6 +309,42 @@ export function MisLogros({
   };
 
   const reveal = phase === 'space';
+
+  // Etiquetas sin solaparse (sobre todo en móvil): se ocultan las que chocarían con otra etiqueta ya visible,
+  // con los nombres de los mundos, el encabezado o el crédito. Prioridad: seleccionada > desbloqueadas > bloqueadas.
+  // En vertical, las estrellas bloqueadas sólo muestran su nombre al tocarlas/enfocarlas.
+  useLayoutEffect(() => {
+    const root = rootRef.current;
+    if (!root || !reveal) return;
+    const fit = () => {
+      const pad = 3;
+      const hit = (a: DOMRect, b: DOMRect) => a.left < b.right + pad && b.left < a.right + pad && a.top < b.bottom + pad && b.top < a.bottom + pad;
+      const kept: DOMRect[] = [...root.querySelectorAll<HTMLElement>('.ml-world__label, .ml-header, .ml-credit, .ml-badges')].map((e) => e.getBoundingClientRect()).filter((r) => r.width > 0);
+      const stars = [...root.querySelectorAll<HTMLElement>('.ml-star')];
+      const rank = (el: HTMLElement) => (el.classList.contains('is-selected') ? 0 : el.classList.contains('is-unlocked') ? 1 : 2);
+      stars.sort((a, b) => rank(a) - rank(b));
+      for (const st of stars) {
+        const lab = st.querySelector<HTMLElement>('.ml-star__label');
+        if (!lab) continue;
+        st.classList.remove('label-off');
+        if (rank(st) === 0) {
+          kept.push(lab.getBoundingClientRect());
+          continue;
+        }
+        if (portrait && rank(st) === 2) {
+          st.classList.add('label-off');
+          continue;
+        }
+        const r = lab.getBoundingClientRect();
+        const outside = r.left < 2 || r.right > window.innerWidth - 2;
+        if (outside || kept.some((k) => hit(r, k))) st.classList.add('label-off');
+        else kept.push(r);
+      }
+    };
+    fit();
+    const t = window.setTimeout(fit, 2200); // tras la animación de entrada (mundos y crédito)
+    return () => window.clearTimeout(t);
+  }, [reveal, portrait, box.w, box.h, placed, selectedId]);
   const instant = instantStart && !reduced;
   const stage = reduced || reveal ? null : stageText(tNow, alt);
   return (

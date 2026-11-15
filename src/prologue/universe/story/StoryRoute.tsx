@@ -35,6 +35,8 @@ export function StoryRoute({ story, variant, reducedMotion, onClose }: Props) {
   const pos = useRef(0);
   const [doneActs, setDoneActs] = useState<Set<string>>(() => new Set());
   const [listView, setListView] = useState(false);
+  /** Móvil: la tarjeta es una hoja inferior que se puede minimizar para ver el paisaje. */
+  const [sheetMin, setSheetMin] = useState(false);
   const [finished, setFinished] = useState(false);
   const [newStars, setNewStars] = useState<string[]>([]);
   const headRef = useRef<HTMLHeadingElement>(null);
@@ -315,7 +317,12 @@ export function StoryRoute({ story, variant, reducedMotion, onClose }: Props) {
       )}
 
       {!listView && (
-        <section className={`sr__panel ${moving ? 'is-hidden' : ''}`} aria-live="polite" key={finished ? 'fin' : idx}>
+        <section className={`sr__panel ${moving ? 'is-hidden' : ''} ${sheetMin && !finished ? 'is-min' : ''}`} aria-live="polite" key={finished ? 'fin' : idx}>
+          {!finished && (
+            <button type="button" className="sr__grab" aria-expanded={!sheetMin} aria-label={sheetMin ? 'Mostrar la tarjeta completa' : 'Minimizar la tarjeta para ver el paisaje'} onClick={() => setSheetMin((v) => !v)}>
+              <span aria-hidden="true" />
+            </button>
+          )}
           {stop ? (
             <>
               <div className="sr__kicker">

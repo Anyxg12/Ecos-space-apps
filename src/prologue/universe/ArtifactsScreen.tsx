@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type ReactNode } from 'react';
+import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react';
 import { CARD_FACT_IDS } from '../../data/spiritFacts';
 import { FactList } from './SpiritExplore';
 import { useEcosHost } from '../host';
@@ -29,7 +29,8 @@ interface Signal {
 }
 
 /** Señales futuras: artefactos sin historia todavía. Sin nombres inventados; sólo un icono tenue con candado. */
-export interface FutureSignal { x: number; y: number }
+/** Posición en % (escritorio) y, opcional, en móvil (mx/my) para no amontonarse con los rovers. */
+export interface FutureSignal { x: number; y: number; mx?: number; my?: number }
 
 const COPY: Record<PlaceId, Record<AgeGroup, { kicker: string; title: string; back: string; hint: string }>> = {
   marte: {
@@ -117,7 +118,7 @@ function SurfaceScreen({ place, variant, onBack, leaving, reducedMotion, signals
 
       <div className="arrive__signals" style={zoomTo ? { opacity: 0 } : undefined}>
         {future.map((f, i) => (
-          <span key={`f${i}`} className="sig sig--future" style={{ left: `${f.x}%`, top: `${f.y}%` }} role="img" aria-label="Señal futura: artefacto por descubrir, bloqueada">
+          <span key={`f${i}`} className="sig sig--future" style={{ '--x': `${f.x}%`, '--y': `${f.y}%`, '--mx': `${f.mx ?? f.x}%`, '--my': `${f.my ?? f.y}%` } as CSSProperties} role="img" aria-label="Señal futura: artefacto por descubrir, bloqueada">
             <span className="sig__glow" aria-hidden="true" />
             <svg className="sig__lock" viewBox="0 0 24 24" aria-hidden="true">
               <rect x="6" y="11" width="12" height="9" rx="2" />
@@ -179,7 +180,8 @@ export function ArtifactsScreen({ variant, onBack, leaving = false, reducedMotio
     { id: 'spirit', name: 'Spirit', status: done ? '✓ Misión completada · repetir' : 'Misión principal', primary: true, x: 36, y: 66, glyph: <RoverGlyph />, story: SPIRIT_STORY, aria: done ? 'Explorar Spirit otra vez: misión completada' : 'Explorar Spirit: misión disponible' },
     { id: 'opportunity', name: 'Opportunity', status: oppDone ? '✓ Misión completada · repetir' : 'Misión disponible', primary: false, mission: true, x: 70, y: 72, glyph: <RoverGlyph />, story: OPPORTUNITY_STORY, aria: oppDone ? 'Explorar Opportunity otra vez: misión completada' : 'Explorar Opportunity: misión disponible' },
   ];
-  const future: FutureSignal[] = [{ x: 15, y: 56 }, { x: 54, y: 50 }, { x: 87, y: 54 }];
+  // en móvil (mx/my) se alejan de los rovers: zonas libres arriba y abajo a la izquierda
+  const future: FutureSignal[] = [{ x: 15, y: 56, mx: 13, my: 37 }, { x: 54, y: 50, mx: 86, my: 41 }, { x: 87, y: 54, mx: 12, my: 81 }];
   const drawers = [
     {
       id: 'spirit',
@@ -213,7 +215,7 @@ export function MoonScreen({ variant, onBack, leaving = false, reducedMotion = f
   const signals: Signal[] = [
     { id: 'alsep', name: 'ALSEP', status: done ? '✓ Ruta completada · repetir' : 'Misión disponible', primary: true, x: 46, y: 70, glyph: <AlsepGlyph />, story: ALSEP_STORY, aria: done ? 'Explorar ALSEP otra vez: ruta completada' : 'Explorar ALSEP: misión disponible' },
   ];
-  const future: FutureSignal[] = [{ x: 18, y: 60 }, { x: 78, y: 58 }, { x: 70, y: 82 }];
+  const future: FutureSignal[] = [{ x: 18, y: 60, mx: 13, my: 50 }, { x: 78, y: 58, mx: 87, my: 52 }, { x: 70, y: 82, mx: 14, my: 80 }];
   const drawers = [
     {
       id: 'alsep',
