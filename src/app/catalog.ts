@@ -1,0 +1,163 @@
+import type { Achievement, ArchiveCard, Badge, ConstellationLink } from '../achievements/types';
+
+/**
+ * Catálogo de logros de la app ECOS. Los textos describen ACCIONES EN ECOS (no hechos históricos).
+ * El estado y la fecha los calcula el repositorio de progreso.
+ */
+export const APP_ACHIEVEMENTS: Achievement[] = [
+  {
+    id: 'horizonte',
+    title: 'Cruzaste el horizonte',
+    activity: 'Completar el prólogo de ECOS',
+    date: null,
+    description: 'Atravesaste el horizonte de ECOS, elegiste cómo explorar y abriste el archivo por primera vez.',
+    status: 'locked',
+    position: { x: 0.07, y: 0.52 },
+    magnitude: 0.9,
+  },
+  {
+    id: 'spirit-historia',
+    title: 'Historia de Spirit',
+    activity: 'Ruta de Spirit · capítulos «Antes del viaje» y «Un nombre»',
+    date: null,
+    description: 'Recorriste el inicio de la ruta de Spirit (construcción, despegue y nombre) con sus fuentes oficiales.',
+    status: 'locked',
+    position: { x: 0.22, y: 0.26 },
+    magnitude: 1,
+  },
+  {
+    id: 'spirit-actividad',
+    title: 'Actividad de Spirit',
+    activity: 'Ruta de Spirit · actividad: elegir el lugar de aterrizaje',
+    date: null,
+    description: 'Respondiste dónde aterrizó Spirit usando su ficha verificada.',
+    status: 'locked',
+    position: { x: 0.36, y: 0.36 },
+    magnitude: 0.95,
+  },
+  {
+    id: 'spirit-legado',
+    title: 'Huellas de Spirit',
+    activity: 'Ruta de Spirit · completar la misión (Legado)',
+    date: null,
+    description: 'Completaste la misión Spirit en ECOS y ganaste su insignia y su ficha de archivo.',
+    status: 'locked',
+    position: { x: 0.5, y: 0.22 },
+    magnitude: 1.45,
+    badgeId: 'huellas-spirit',
+  },
+  {
+    id: 'marte-todos',
+    title: 'Todos los artefactos de Marte',
+    activity: 'Completar todas las misiones de Marte en ECOS',
+    date: null,
+    description: 'Meta futura. Todavía no se puede conseguir: en Marte quedan señales de otros artefactos que aún no tienen historia en ECOS.',
+    status: 'locked',
+    future: true,
+    position: { x: 0.8, y: 0.3 },
+    magnitude: 0.8,
+  },
+  {
+    id: 'opportunity-historia',
+    title: 'Historia de Opportunity',
+    activity: 'Ruta de Opportunity · capítulos «Antes del viaje» y «Un nombre»',
+    date: null,
+    description: 'Recorriste el inicio de la ruta de Opportunity (construcción, despegue y nombre) con su fuente oficial.',
+    status: 'locked',
+    position: { x: 0.3, y: 0.5 },
+    magnitude: 0.95,
+  },
+  {
+    id: 'opportunity-actividad',
+    title: 'Actividad de Opportunity',
+    activity: 'Ruta de Opportunity · actividad: elegir el lugar de aterrizaje',
+    date: null,
+    description: 'Respondiste dónde aterrizó Opportunity usando su ficha verificada.',
+    status: 'locked',
+    position: { x: 0.46, y: 0.53 },
+    magnitude: 0.9,
+  },
+  {
+    id: 'opportunity-legado',
+    title: 'Huellas de Opportunity',
+    activity: 'Ruta de Opportunity · completar la misión (Legado)',
+    date: null,
+    description: 'Completaste la misión Opportunity en ECOS y ganaste su insignia provisional.',
+    status: 'locked',
+    position: { x: 0.62, y: 0.43 },
+    magnitude: 1.3,
+    badgeId: 'huellas-opportunity',
+  },
+  {
+    id: 'alsep-historia',
+    title: 'Historia de ALSEP',
+    activity: 'Ruta de ALSEP · armar la estación de Apollo 12',
+    date: null,
+    description: 'Recorriste el inicio de la ruta ALSEP en la Luna (Apollo 11 y Apollo 12) con sus fuentes oficiales.',
+    status: 'locked',
+    position: { x: 0.26, y: 0.76 },
+    magnitude: 0.95,
+  },
+  {
+    id: 'alsep-actividad',
+    title: 'Actividad de ALSEP',
+    activity: 'Ruta de ALSEP · actividad: la energía de la estación',
+    date: null,
+    description: 'Respondiste con qué energía funcionaban las estaciones ALSEP.',
+    status: 'locked',
+    position: { x: 0.44, y: 0.72 },
+    magnitude: 0.9,
+  },
+  {
+    id: 'alsep-legado',
+    title: 'Ecos de la Luna',
+    activity: 'Ruta de ALSEP · completar la ruta (Legado)',
+    date: null,
+    description: 'Completaste la ruta ALSEP en ECOS y ganaste su insignia provisional.',
+    status: 'locked',
+    position: { x: 0.62, y: 0.8 },
+    magnitude: 1.3,
+    badgeId: 'ecos-luna',
+  },
+];
+
+export const APP_BADGES: Badge[] = [
+  { id: 'huellas-spirit', name: 'Huellas de Spirit', provisional: true, achievementId: 'spirit-legado', icon: 'tracks' },
+  { id: 'huellas-opportunity', name: 'Huellas de Opportunity', provisional: true, achievementId: 'opportunity-legado', icon: 'tracks' },
+  { id: 'ecos-luna', name: 'Ecos de la Luna', provisional: true, achievementId: 'alsep-legado', icon: 'planet' },
+];
+
+export const APP_ARCHIVE: ArchiveCard[] = [
+  {
+    id: 'ficha-spirit',
+    title: 'Ficha de Spirit',
+    achievementId: 'spirit-legado',
+    summary: 'Ficha de archivo del rover Spirit con datos verificados (fuentes NASA/JPL) en la pantalla de Marte.',
+  },
+  {
+    id: 'ficha-opportunity',
+    title: 'Ficha de Opportunity',
+    achievementId: 'opportunity-legado',
+    summary: 'Ficha de archivo del rover Opportunity con datos verificados (NASA Science) en la pantalla de Marte.',
+  },
+  {
+    id: 'ficha-alsep',
+    title: 'Ficha de ALSEP',
+    achievementId: 'alsep-legado',
+    summary: 'Ficha de archivo de las estaciones ALSEP de Apollo con datos verificados (fuentes NASA) en la pantalla de la Luna.',
+  },
+];
+
+export const APP_LINKS: ConstellationLink[] = [
+  { from: 'horizonte', to: 'spirit-historia' },
+  { from: 'spirit-historia', to: 'spirit-actividad' },
+  { from: 'spirit-actividad', to: 'spirit-legado' },
+  { from: 'spirit-legado', to: 'marte-todos' },
+  { from: 'horizonte', to: 'opportunity-historia' },
+  { from: 'opportunity-historia', to: 'opportunity-actividad' },
+  { from: 'opportunity-actividad', to: 'opportunity-legado' },
+  { from: 'opportunity-legado', to: 'marte-todos' },
+  { from: 'horizonte', to: 'alsep-historia' },
+  { from: 'alsep-historia', to: 'alsep-actividad' },
+  { from: 'alsep-actividad', to: 'alsep-legado' },
+];

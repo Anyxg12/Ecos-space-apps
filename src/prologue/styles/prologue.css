@@ -1,0 +1,174 @@
+/*
+ * ECOS · Prólogo — estilos propios (CSS plano, sin @apply: se puede importar en cualquier proyecto).
+ * Las clases utilitarias de los componentes son de Tailwind v4.
+ */
+:root {
+  --font-sans: 'Inter', 'Segoe UI', system-ui, -apple-system, Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-round: 'Nunito', 'Quicksand', 'Varela Round', ui-rounded, 'Segoe UI', system-ui, sans-serif;
+  --font-serif: 'Iowan Old Style', 'Palatino Linotype', Palatino, 'Book Antiqua', Georgia, serif;
+  --font-mono: ui-monospace, 'SFMono-Regular', 'JetBrains Mono', Menlo, Consolas, monospace;
+}
+.ecos-prologue, .theme-junior, .theme-explorer, .theme-discovery { color-scheme: dark; font-family: var(--font-sans); }
+.font-mono { font-family: var(--font-mono); }
+
+/* ---------- Logo ---------- */
+.ecos-letter { font-weight: 200; letter-spacing: 0.32em; line-height: 1; color: #f7efe3; text-shadow: 0 0 24px rgba(255, 190, 120, 0.25); margin-right: -0.1em; }
+
+/* ---------- Botones ---------- */
+.ecos-cta {
+  position: relative; isolation: isolate; padding: 1rem 2.2rem; border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--accent) 65%, transparent);
+  background: radial-gradient(120% 180% at 50% 120%, color-mix(in srgb, var(--accent) 22%, transparent), rgba(0,0,0,0.35) 60%);
+  backdrop-filter: blur(6px); color: #fff; cursor: pointer;
+  box-shadow: inset 0 0 20px color-mix(in srgb, var(--accent) 12%, transparent);
+  transition: box-shadow .5s ease, transform .5s ease, border-color .5s ease, opacity .3s;
+}
+.ecos-cta__label { white-space: nowrap; font-size: 0.78rem; letter-spacing: 0.42em; text-transform: uppercase; font-weight: 400; margin-right: -0.42em; }
+.ecos-cta::after {
+  content: ''; position: absolute; inset: -1px; border-radius: inherit; z-index: -1; opacity: 0;
+  background: conic-gradient(from var(--cta-a, 0deg), transparent 0 70%, color-mix(in srgb, var(--accent) 70%, white) 85%, transparent 100%);
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0); padding: 1px;
+  transition: opacity .5s;
+}
+.ecos-cta:hover, .ecos-cta:focus-visible { box-shadow: 0 0 40px -6px var(--accent), inset 0 0 26px color-mix(in srgb, var(--accent) 22%, transparent); border-color: var(--accent); }
+.ecos-cta:hover::after, .ecos-cta:focus-visible::after { opacity: 1; animation: cta-orbit 3s linear infinite; }
+.ecos-cta:focus-visible { outline: 1px solid rgba(255,255,255,0.7); outline-offset: 5px; }
+.ecos-cta:disabled { opacity: 0.35; cursor: not-allowed; box-shadow: none; }
+@property --cta-a { syntax: '<angle>'; inherits: false; initial-value: 0deg; }
+@keyframes cta-orbit { to { --cta-a: 360deg; } }
+
+.ecos-ghost-btn { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.55); padding: 0.55rem 0.9rem; border-radius: 999px; border: 1px solid rgba(255,255,255,0.12); background: rgba(0,0,0,0.25); backdrop-filter: blur(4px); cursor: pointer; transition: color .3s, border-color .3s; }
+.ecos-ghost-btn:hover, .ecos-ghost-btn:focus-visible { color: #fff; border-color: rgba(255,255,255,0.4); }
+.ecos-ghost-btn:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+
+/* ---------- Ecos ---------- */
+.echo-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 10px var(--accent); animation: echo-pulse 2.4s ease-in-out infinite; }
+@keyframes echo-pulse { 50% { opacity: 0.35; } }
+
+/* ---------- Letterbox cinematográfico durante el acercamiento ---------- */
+.ecos-letterbox::before, .ecos-letterbox::after { content: ''; position: absolute; left: 0; right: 0; height: 0; background: #000; transition: height 1.2s cubic-bezier(.6,0,.2,1); }
+.ecos-letterbox::before { top: 0; } .ecos-letterbox::after { bottom: 0; }
+.ecos-letterbox[data-active='true']::before, .ecos-letterbox[data-active='true']::after { height: 9vh; }
+
+/* ---------- Núcleo (mascota temporal) — fijo, sólo pulso y brillo ---------- */
+.signal-core { position: relative; display: grid; place-items: center; }
+.signal-core > * { grid-area: 1 / 1; transform-origin: 50% 50%; }
+.signal-core__orbits { width: 100%; height: 100%; overflow: visible; }
+.signal-core__wave { width: 100%; height: 100%; border-radius: 50%; border: 1px solid color-mix(in srgb, var(--accent, #ffb36b) 45%, transparent); opacity: 0; animation: core-wave 3.6s ease-out infinite; }
+.signal-core__wave--2 { animation-delay: 1.8s; }
+.signal-core__glow { width: 46%; height: 46%; border-radius: 50%; background: radial-gradient(circle, #fff8ec 0%, color-mix(in srgb, var(--accent, #ffb36b) 80%, white) 22%, color-mix(in srgb, var(--accent, #ffb36b) 32%, transparent) 52%, transparent 72%); animation: core-breathe 3.2s ease-in-out infinite; }
+.signal-core__dot { width: 12%; height: 12%; border-radius: 50%; background: #fff8ec; box-shadow: 0 0 12px 2px rgba(255, 240, 220, 0.8); }
+.signal-core[data-state='speaking'] .signal-core__glow { animation-duration: 1.2s; }
+.signal-core[data-state='speaking'] .signal-core__wave { animation-duration: 2.2s; }
+.signal-core--still .signal-core__wave, .signal-core--still .signal-core__glow { animation: none; }
+.signal-core--still .signal-core__wave { opacity: .3; transform: scale(.85); }
+@keyframes core-wave { 0% { transform: scale(.4); opacity: .55; } 100% { transform: scale(1.15); opacity: 0; } }
+@keyframes core-breathe { 0%, 100% { transform: scale(1); opacity: .9; } 50% { transform: scale(1.1); opacity: 1; } }
+.typewriter-caret { position: relative; display: inline-block; width: 0; height: 1em; vertical-align: -0.12em; }
+.typewriter-caret::after { content: ''; position: absolute; left: 1px; top: 0; width: 0.45em; height: 1em; background: var(--accent); animation: caret 1s steps(1) infinite; }
+@keyframes caret { 50% { opacity: 0; } }
+
+/* ---------- Tarjetas de identidad ---------- */
+.identity-card { position: relative; display: flex; flex-direction: column; text-align: left; overflow: hidden; border-radius: 20px; border: 1px solid rgba(255,255,255,0.12); background: rgba(8,8,14,0.55); backdrop-filter: blur(10px); cursor: pointer; transition: border-color .4s, box-shadow .4s; }
+.identity-card__preview { aspect-ratio: 21 / 9; overflow: hidden; border-bottom: 1px solid rgba(255,255,255,0.08); }
+@media (min-width: 640px) { .identity-card__preview { aspect-ratio: 16 / 9; } }
+.identity-card__preview svg { width: 100%; height: 100%; transition: transform 1.2s cubic-bezier(.2,.7,.2,1); }
+.identity-card:hover .identity-card__preview svg, .identity-card:focus-visible .identity-card__preview svg { transform: scale(1.06); }
+.identity-card__name { font-size: 1.35rem; font-weight: 300; letter-spacing: 0.08em; color: #fff; }
+.identity-card__dest { margin: 0 1rem 1rem; align-self: flex-start; font-family: var(--font-mono); font-size: 10px; letter-spacing: .2em; text-transform: uppercase; padding: .3rem .6rem; border-radius: 999px; border: 1px solid rgba(255,255,255,0.15); color: rgba(255,255,255,0.6); }
+.identity-card--junior:hover, .identity-card--junior:focus-visible { border-color: #ff9a3d; box-shadow: 0 0 40px -10px #ff9a3d; }
+.identity-card--junior .identity-card__name { font-family: var(--font-round); font-weight: 800; color: #ffd27a; }
+.identity-card--explorer:hover, .identity-card--explorer:focus-visible { border-color: #4fe3ff; box-shadow: 0 0 40px -10px #4fe3ff; }
+.identity-card--explorer .identity-card__name { text-transform: uppercase; letter-spacing: .25em; font-size: 1.05rem; color: #4fe3ff; }
+.identity-card--discovery:hover, .identity-card--discovery:focus-visible { border-color: #e9dcc3; box-shadow: 0 0 40px -14px #e9dcc3; }
+.identity-card--discovery .identity-card__name { font-family: var(--font-serif); font-style: italic; color: #f3efe7; }
+.identity-card:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+.radar-sweep { transform-origin: 80px 52px; animation: spin 4s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ---------- Chips de intereses ---------- */
+.interest-chip { position: relative; display: grid; grid-template-rows: 2rem auto; justify-items: center; align-content: center; row-gap: .5rem; min-height: 5.75rem; padding: .9rem .4rem; border-radius: 16px; border: 1px solid rgba(255,255,255,0.12); background: rgba(10,10,18,0.5); backdrop-filter: blur(8px); color: rgba(255,255,255,0.75); cursor: pointer; transition: all .35s ease; }
+.interest-chip:hover:not(:disabled) { border-color: color-mix(in srgb, var(--accent) 60%, transparent); color: #fff; }
+.interest-chip--on { border-color: var(--accent); color: #fff; background: radial-gradient(100% 100% at 50% 0%, var(--accent-soft), rgba(10,10,18,0.6)); box-shadow: 0 0 28px -10px var(--accent), inset 0 0 0 1px color-mix(in srgb, var(--accent) 40%, transparent); }
+.interest-chip--on svg { color: var(--accent); }
+.interest-chip:disabled { opacity: .35; cursor: not-allowed; }
+.interest-chip:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+.interest-chip__icon { display: grid; place-items: center; width: 2rem; height: 2rem; }
+.interest-chip__label { font-size: 13px; line-height: 1.15; text-align: center; }
+.interest-chip__pip { position: absolute; top: 8px; right: 8px; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 8px var(--accent); }
+
+/* ---------- Explorer HUD ---------- */
+.explorer-bg { background:
+  linear-gradient(rgba(79,227,255,0.05) 1px, transparent 1px) 0 0 / 40px 40px,
+  linear-gradient(90deg, rgba(79,227,255,0.05) 1px, transparent 1px) 0 0 / 40px 40px,
+  radial-gradient(80% 60% at 50% 40%, #241255 0%, #0a0f2c 55%, #04060f 100%); }
+.hud-panel { position: relative; border: 1px solid rgba(79,227,255,0.22); background: rgba(6,12,32,0.6); backdrop-filter: blur(6px); padding: 1.1rem; clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 16px 100%, 0 calc(100% - 16px)); }
+.hud-title { font-family: var(--font-mono); font-size: 11px; letter-spacing: .3em; text-transform: uppercase; color: #4fe3ff; }
+
+/* ---------- Fallback CSS del agujero negro ---------- */
+@property --bh-warm { syntax: '<color>'; inherits: true; initial-value: rgb(255 140 56); }
+@property --bh-hot { syntax: '<color>'; inherits: true; initial-value: rgb(255 237 209); }
+@property --bh-cool { syntax: '<color>'; inherits: true; initial-value: rgb(140 41 13); }
+@property --bh-nebula { syntax: '<color>'; inherits: true; initial-value: rgb(46 31 82); }
+@property --bh-scale { syntax: '<number>'; inherits: true; initial-value: 1; }
+@property --bh-fade { syntax: '<number>'; inherits: true; initial-value: 0; }
+.bh-css { position: absolute; inset: 0; overflow: hidden; --bh-px: 0; --bh-py: 0;
+  transition-property: --bh-warm, --bh-hot, --bh-cool, --bh-nebula, --bh-scale, --bh-fade; transition-duration: var(--bh-ms, 0ms); transition-timing-function: cubic-bezier(.65,0,.35,1);
+  background: radial-gradient(70% 60% at 50% 50%, color-mix(in srgb, var(--bh-nebula) 45%, #000) 0%, #000 75%);
+  filter: grayscale(var(--bh-mono, 0)) saturate(calc(1 + var(--bh-post, 0) * 0.4)); }
+.bh-css__stars { position: absolute; inset: -4%; width: 108%; height: 108%; transform: translate(calc(var(--bh-px) * -10px), calc(var(--bh-py) * 8px)) scale(calc(1 + (var(--bh-scale) - 1) * 0.08)); transition: transform 1.5s ease-out; }
+.bh-css__nebula { position: absolute; inset: 0; background: radial-gradient(40% 18% at 30% 35%, color-mix(in srgb, var(--bh-nebula) 60%, transparent), transparent 70%), radial-gradient(30% 20% at 75% 70%, color-mix(in srgb, var(--bh-nebula) 45%, transparent), transparent 70%); opacity: .7; }
+.bh-css__rig { position: absolute; left: 50%; top: 50%; width: min(46vmin, 420px); aspect-ratio: 1; transform: translate(-50%, -50%) translate(calc(var(--bh-px) * 14px), calc(var(--bh-py) * -10px)) scale(var(--bh-scale)) rotate(-5deg); }
+.bh-css__halo { position: absolute; inset: -60%; border-radius: 50%; background: radial-gradient(circle, color-mix(in srgb, var(--bh-warm) 30%, transparent) 18%, transparent 55%); filter: blur(10px); }
+.bh-css__disk { position: absolute; left: -95%; right: -95%; top: 50%; height: 34%; transform: translateY(-50%); border-radius: 50%;
+  background: radial-gradient(closest-side, transparent 30%, var(--bh-hot) 34%, var(--bh-warm) 48%, var(--bh-cool) 72%, transparent 100%);
+  filter: blur(3px); }
+.bh-css__disk--back { opacity: .85; clip-path: inset(0 0 50% 0); }
+.bh-css__disk--front { clip-path: inset(50% 0 0 0); background: radial-gradient(closest-side, transparent 30%, var(--bh-hot) 34%, var(--bh-warm) 46%, var(--bh-cool) 70%, transparent 100%), linear-gradient(90deg, rgba(255,255,255,0.18), transparent 45%); }
+.bh-css__arc { position: absolute; inset: 8%; border-radius: 50%; background: radial-gradient(circle, transparent 54%, var(--bh-hot) 58%, var(--bh-warm) 64%, color-mix(in srgb, var(--bh-cool) 60%, transparent) 72%, transparent 80%); filter: blur(2px); }
+.bh-css__shadow { position: absolute; inset: 23%; border-radius: 50%; background: #000; box-shadow: 0 0 0 2px color-mix(in srgb, var(--bh-hot) 80%, transparent), 0 0 30px 6px color-mix(in srgb, var(--bh-warm) 50%, transparent); }
+.bh-css__fade { position: absolute; inset: 0; background: #000; opacity: var(--bh-fade); }
+.bh-css:not(.bh-css--still) .bh-css__arc { animation: bh-breathe 7s ease-in-out infinite; }
+.bh-css:not(.bh-css--still) .bh-css__disk { animation: bh-shimmer 9s ease-in-out infinite; }
+@keyframes bh-breathe { 50% { transform: scale(1.025); opacity: .9; } }
+@keyframes bh-shimmer { 50% { filter: blur(3px) brightness(1.12); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .ecos-prologue *, .ecos-prologue *::before, .ecos-prologue *::after,
+  [class*="theme-"] *, [class*="theme-"] *::before, [class*="theme-"] *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; }
+}
+
+/* ---------- Escena 1: el agujero negro como objetivo ---------- */
+.horizon-target {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  width: min(44vmin, 380px); aspect-ratio: 1; border-radius: 50%;
+  background: transparent; border: 0; cursor: pointer; -webkit-tap-highlight-color: transparent;
+}
+.horizon-target:focus { outline: none; }
+.horizon-target__ring {
+  position: absolute; inset: 14%; border-radius: 50%;
+  border: 1px solid rgba(255, 236, 214, 0.0); transition: border-color 2s ease, inset 1.2s cubic-bezier(.2,.7,.2,1);
+}
+.horizon-target[data-hint='true'] .horizon-target__ring { border-color: rgba(255, 236, 214, 0.1); animation: horizon-pulse 4.5s ease-in-out infinite; }
+.horizon-target:hover .horizon-target__ring, .horizon-target:focus-visible .horizon-target__ring { inset: 10%; border-color: rgba(255, 236, 214, 0.22); }
+@keyframes horizon-pulse { 0%, 100% { transform: scale(1); opacity: .5; } 50% { transform: scale(1.06); opacity: 1; } }
+.horizon-skip {
+  position: absolute; top: max(1rem, env(safe-area-inset-top)); right: 1rem;
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: .25em; text-transform: uppercase;
+  color: rgba(255,255,255,0.28); background: none; border: 0; padding: .5rem; cursor: pointer; transition: color .3s;
+}
+.horizon-skip:hover, .horizon-skip:focus-visible { color: rgba(255,255,255,0.85); }
+.horizon-skip:focus-visible { outline: 1px solid rgba(255,255,255,0.6); outline-offset: 2px; border-radius: 4px; }
+
+/* ---------- Escena 2b: revelado del logo ---------- */
+.logo-reveal__line { height: 1px; background: linear-gradient(90deg, transparent, rgba(255, 214, 170, 0.75), transparent); }
+
+/* ---------- Sonido (discreto) ---------- */
+.sound-toggle { position: fixed; z-index: 30; right: 1rem; bottom: max(1rem, env(safe-area-inset-bottom)); display: flex; align-items: center; gap: .45rem;
+  padding: .45rem .6rem; border-radius: 999px; border: 1px solid rgba(255,255,255,0.08); background: rgba(0,0,0,0.2); color: rgba(255,255,255,0.4);
+  font-family: var(--font-mono); font-size: 9px; letter-spacing: .25em; text-transform: uppercase; cursor: pointer; transition: color .3s, border-color .3s; }
+.sound-toggle:hover, .sound-toggle:focus-visible { color: rgba(255,255,255,0.9); border-color: rgba(255,255,255,0.3); }
+.sound-toggle[aria-pressed='true'] { color: color-mix(in srgb, var(--accent, #ffb36b) 80%, white); }
+.sound-toggle:focus-visible { outline: 1px solid rgba(255,255,255,0.6); outline-offset: 2px; }
+.sound-toggle__label { display: none; }
+@media (min-width: 640px) { .sound-toggle__label { display: inline; } }

@@ -1,0 +1,1316 @@
+{
+  "meta": {
+    "title": "Spirit (MER-A) verified fact base — ECOS",
+    "project": "ECOS — NASA Space Apps Challenge Sangolquí 2026",
+    "challenge": "Abandoned but not Forgotten: Storytelling about NASA's Discarded Equipment on the Moon and Mars",
+    "subject": "Spirit (MER-A / MER-2) Mars Exploration Rover",
+    "do_not_confuse_with": [
+      "Opportunity (twin rover, MER-B / MER-1, landed at Meridiani Planum)",
+      "Ingenuity (Mars helicopter flown with Perseverance, a later mission)"
+    ],
+    "language": "bilingual",
+    "generated": "2026-11-14",
+    "timezone_label": "America/Guayaquil",
+    "verification_policy": "Only official NASA sources (nasa.gov domains: science.nasa.gov, jpl.nasa.gov, nssdc.gsfc.nasa.gov, ntrs.nasa.gov, naif.jpl.nasa.gov). Each fact has a source URL that was fetched and checked to contain the stated excerpt. No invented facts.",
+    "starting_page": "https://science.nasa.gov/mission/mars-exploration-rovers-spirit-and-opportunity/",
+    "ai_images_used": false,
+    "fact_count": 45,
+    "notes_es": "Base de hechos para la app y para textos narrativos. No añadir fechas, distancias, coordenadas ni descubrimientos que no figuren aquí.",
+    "notes_en": "Fact base for the app and narrative text. Do not add dates, distances, coordinates or discoveries that are not listed here.",
+    "note_app": "Copia reducida para la app (solo meta + hechos). El inventario completo de fuentes de datos y enlaces rotos está en el registro de investigación del equipo, no en el bundle."
+  },
+  "facts": [
+    {
+      "id": "official_name",
+      "category": "identity",
+      "verified": true,
+      "label_es": "Nombre oficial",
+      "label_en": "Official name",
+      "value_es": "Spirit, rover de exploración de Marte de la NASA; parte de la Mars Exploration Rover Mission (MER).",
+      "value_en": "Spirit, a NASA Mars exploration rover; part of the Mars Exploration Rover Mission (MER).",
+      "sources": [
+        {
+          "url": "https://science.nasa.gov/mission/mer-spirit/",
+          "title": "Spirit",
+          "publisher": "NASA Science",
+          "excerpt": "NASA's Spirit rover—and its twin, Opportunity—studied the history of climate and water at sites on Mars where conditions may once have been favorable to life.",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true
+        }
+      ]
+    },
+    {
+      "id": "designations",
+      "category": "identity",
+      "verified": true,
+      "label_es": "Designaciones",
+      "label_en": "Designations",
+      "value_es": "Mars Exploration Rover 2 (MER 2), que pasó a ser MER-A. El gemelo Opportunity es MER-B / MER-1. En PDS: urn:nasa:pds:context:instrument_host:spacecraft.mer2.",
+      "value_en": "Mars Exploration Rover 2 (MER 2), which became MER-A. Twin Opportunity is MER-B / MER-1. PDS instrument host: urn:nasa:pds:context:instrument_host:spacecraft.mer2.",
+      "do_not_confuse_with": [
+        "Opportunity (MER-B, MER-1)",
+        "Ingenuity (Perseverance helicopter)"
+      ],
+      "sources": [
+        {
+          "url": "https://science.nasa.gov/mission/mer-spirit/",
+          "title": "Spirit",
+          "publisher": "NASA Science",
+          "excerpt": "Spacecraft: Mars Exploration Rover 2 (MER 2) [became MER-A]",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true
+        },
+        {
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2003-027A",
+          "title": "Spirit (NSSDCA/COSPAR ID: 2003-027A)",
+          "publisher": "NASA NSSDCA",
+          "excerpt": "The \"Spirit\" rover (Mars Exploration Rover A or MER-2) is one of two rovers launched to Mars in mid-2003.",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true,
+          "note": "Page read 2026-11-14. Some later curl requests to this host timed out."
+        }
+      ]
+    },
+    {
+      "id": "cospar_id",
+      "category": "identity",
+      "verified": true,
+      "label_es": "Identificador NSSDCA/COSPAR",
+      "label_en": "NSSDCA/COSPAR ID",
+      "value_es": "2003-027A",
+      "value_en": "2003-027A",
+      "sources": [
+        {
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2003-027A",
+          "title": "Spirit (NSSDCA/COSPAR ID: 2003-027A)",
+          "publisher": "NASA NSSDCA",
+          "excerpt": "NSSDCA/COSPAR ID: 2003-027A",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true
+        }
+      ]
+    },
+    {
+      "id": "management",
+      "category": "identity",
+      "verified": true,
+      "label_es": "Gestión",
+      "label_en": "Management",
+      "value_es": "NASA / JPL (Jet Propulsion Laboratory, división del California Institute of Technology).",
+      "value_en": "NASA / JPL (Jet Propulsion Laboratory, a division of the California Institute of Technology).",
+      "sources": [
+        {
+          "url": "https://science.nasa.gov/mission/mer-spirit/",
+          "title": "Spirit",
+          "publisher": "NASA Science",
+          "excerpt": "Mission Design and Management: NASA / JPL",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true
+        }
+      ]
+    },
+    {
+      "id": "name_origin",
+      "category": "identity",
+      "verified": true,
+      "label_es": "Origen del nombre",
+      "label_en": "Name origin",
+      "value_es": "Sofi Collis, de 9 años, de Scottsdale (Arizona), ganadora de un concurso de ensayos de la NASA y The Lego Company, con The Planetary Society. Ensayo leído el 8 de junio de 2003 en el Kennedy Space Center. Antes se llamaba Mars Exploration Rover A.",
+      "value_en": "Named by 9-year-old Sofi Collis of Scottsdale, Arizona, winner of an essay contest sponsored by NASA and The Lego Company, with The Planetary Society. Essay read 8 June 2003 at Kennedy Space Center. Previously called Mars Exploration Rover A.",
+      "sources": [
+        {
+          "url": "https://www.jpl.nasa.gov/news/girl-with-dreams-names-mars-rovers-spirit-and-opportunity/",
+          "title": "Girl with Dreams Names Mars Rovers 'Spirit' and 'Opportunity'",
+          "publisher": "NASA Jet Propulsion Laboratory",
+          "excerpt": "Sofi read her essay: \"I used to live in an orphanage. It was dark and cold and lonely. At night, I looked up at the sparkly sky and felt better. I dreamed I could fly there. In America, I can make all my dreams come true. Thank you for the 'Spirit' and the 'Opportunity.'\" Hers was selected from nearly 10,000 entries in the contest sponsored by NASA and the Lego Co.",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true,
+          "source_date": "2003-06-08"
+        }
+      ]
+    },
+    {
+      "id": "science_goals",
+      "category": "goals",
+      "verified": true,
+      "label_es": "Objetivo científico general",
+      "label_en": "Overall science objective",
+      "value_es": "Estudiar la historia del clima y del agua en lugares de Marte donde las condiciones pudieron ser favorables para la vida. Buscar rocas y suelos con indicios de actividad acuosa pasada.",
+      "value_en": "To study the history of climate and water at sites on Mars where conditions may once have been favorable to life, searching rocks and soils for clues to past water activity.",
+      "sources": [
+        {
+          "url": "https://science.nasa.gov/mission/mer-spirit/",
+          "title": "Spirit",
+          "publisher": "NASA Science",
+          "excerpt": "NASA's Spirit rover—and its twin, Opportunity—studied the history of climate and water at sites on Mars where conditions may once have been favorable to life. [...] The twin rovers’ main scientific objective was to search for a range of rocks and soil types and then look for clues for past water activity on Mars.",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true
+        }
+      ]
+    },
+    {
+      "id": "seven_objectives",
+      "category": "goals",
+      "verified": true,
+      "label_es": "Siete objetivos científicos de MER",
+      "label_en": "Seven MER science objectives",
+      "value_es": "1) Buscar y caracterizar rocas y suelos con indicios de agua pasada. 2) Distribución y composición de minerales, rocas y suelos. 3) Procesos geológicos del terreno. 4) Ground truth de observaciones orbitales. 5) Minerales con hierro, incluidos los formados en agua. 6) Mineralogía y texturas. 7) Condiciones ambientales cuando hubo agua líquida y si pudieron ser propicias para la vida.",
+      "value_en": "1) Search for and characterize rocks and soils that hold clues to past water activity. 2) Distribution and composition of minerals, rocks, and soils. 3) Geologic processes that shaped the local terrain. 4) Ground truth of orbiter observations. 5) Iron-containing minerals, including those formed in water. 6) Mineralogy and textures. 7) Environmental conditions when liquid water was present and whether those environments were conducive to life.",
+      "sources": [
+        {
+          "url": "https://science.nasa.gov/mission/mars-exploration-rovers-spirit-and-opportunity/science-objectives/",
+          "title": "Science Objectives",
+          "publisher": "NASA Science",
+          "excerpt": "Search for and characterize a variety of rocks and soils that hold clues to past water activity. In particular, samples sought included those that have minerals deposited by water-related processes such as precipitation, evaporation, sedimentary cementation, or hydrothermal activity.",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true
+        }
+      ]
+    },
+    {
+      "id": "gusev_selection",
+      "category": "goals",
+      "verified": true,
+      "label_es": "Por qué se eligió el cráter Gusev",
+      "label_en": "Why Gusev Crater was chosen",
+      "value_es": "Posible antiguo lago en un gran cráter de impacto; apariencia de lecho de lago; un valle largo y profundo, aparentemente tallado por agua, desemboca en Gusev.",
+      "value_en": "A possible former lake in a giant impact crater; appearance of a crater lakebed; a long, deep valley apparently carved by ancient water flows leads into Gusev.",
+      "sources": [
+        {
+          "url": "https://science.nasa.gov/mission/mars-exploration-rovers-spirit-and-opportunity/",
+          "title": "Mars Exploration Rovers: Spirit and Opportunity",
+          "publisher": "NASA Science",
+          "excerpt": "Spirit landed at Gusev Crater, a possible former lake in a giant impact crater.",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true
+        },
+        {
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2003-027A",
+          "title": "Spirit (NSSDCA/COSPAR ID: 2003-027A)",
+          "publisher": "NASA NSSDCA",
+          "excerpt": "Gusev Crater was chosen as a landing site because it has the appearance of a crater lakebed.",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true
+        }
+      ]
+    },
+    {
+      "id": "launch_datetime",
+      "category": "launch",
+      "verified": true,
+      "label_es": "Fecha y hora de lanzamiento",
+      "label_en": "Launch date and time",
+      "value_es": "10 de junio de 2003, 10:58:47 PDT (17:58:47 UTC según NASA Science; 17:58:46.773 UT según NSSDCA).",
+      "value_en": "10 June 2003, 10:58:47 PDT (17:58:47 UTC per NASA Science; 17:58:46.773 UT per NSSDCA).",
+      "disagreements": [
+        {
+          "topic": "launch_time_seconds",
+          "summary_es": "Diferencia de un segundo entre NASA Science (17:58:47 UTC) y NSSDCA (17:58:46.773 UT).",
+          "summary_en": "One-second difference between NASA Science (17:58:47 UTC) and NSSDCA (17:58:46.773 UT)."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://science.nasa.gov/mission/mer-spirit/",
+          "title": "Spirit",
+          "publisher": "NASA Science",
+          "excerpt": "Spirit was launched first, at 10:58:47 PDT (17:58:47 UTC) June 10, 2003, from Cape Canaveral, Florida.",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true
+        },
+        {
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2003-027A",
+          "title": "Spirit (NSSDCA/COSPAR ID: 2003-027A)",
+          "publisher": "NASA NSSDCA",
+          "excerpt": "Spirit was launched on a standard Delta II 7925 on 10 June 2003 at 17:58:46.773 UT.",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true
+        }
+      ]
+    },
+    {
+      "id": "launch_vehicle_site",
+      "category": "launch",
+      "verified": true,
+      "label_es": "Vehículo y lugar de lanzamiento",
+      "label_en": "Launch vehicle and site",
+      "value_es": "Delta 7925-9.5 (n.º D298) / Delta II 7925, desde Cabo Cañaveral, Florida, SLC-17A.",
+      "value_en": "Delta 7925-9.5 (no. D298) / Delta II 7925, from Cape Canaveral, Florida, SLC-17A.",
+      "sources": [
+        {
+          "url": "https://science.nasa.gov/mission/mer-spirit/",
+          "title": "Spirit",
+          "publisher": "NASA Science",
+          "excerpt": "Launch Vehicle: Delta 7925-9.5 (no. D298). Launch Site: Cape Canaveral, Florida / SLC-17A",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true
+        }
+      ]
+    },
+    {
+      "id": "mass_spacecraft",
+      "category": "launch",
+      "verified": true,
+      "label_es": "Masa de la nave en lanzamiento (conjunto)",
+      "label_en": "Spacecraft (launch-stack) mass",
+      "value_es": "1 062 kg (2 341 libras). No es la masa del rover solo.",
+      "value_en": "1,062 kilograms (2,341 pounds). This is not the rover-only mass.",
+      "sources": [
+        {
+          "url": "https://science.nasa.gov/mission/mer-spirit/",
+          "title": "Spirit",
+          "publisher": "NASA Science",
+          "excerpt": "Spacecraft Mass: 2,341 pounds (1,062 kilograms)",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true
+        }
+      ]
+    },
+    {
+      "id": "mass_rover",
+      "category": "launch",
+      "verified": true,
+      "label_es": "Masa del rover",
+      "label_en": "Rover mass",
+      "value_es": "Unos 185 kg (405 libras); unas siete veces la masa de Sojourner.",
+      "value_en": "About 185 kilograms (405 pounds); about seven times heavier than Sojourner.",
+      "sources": [
+        {
+          "url": "https://science.nasa.gov/mission/mer-spirit/",
+          "title": "Spirit",
+          "publisher": "NASA Science",
+          "excerpt": "Each rover is about the size of a golf cart and seven times heavier (about 405 pounds or 185 kilograms) than the Sojourner rover",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true
+        },
+        {
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2003-027A",
+          "title": "Spirit (NSSDCA/COSPAR ID: 2003-027A)",
+          "publisher": "NASA NSSDCA",
+          "excerpt": "Mass: 185 kg",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true
+        }
+      ]
+    },
+    {
+      "id": "landing_site",
+      "category": "landing",
+      "verified": true,
+      "label_es": "Lugar de aterrizaje",
+      "label_en": "Landing site",
+      "value_es": "Cráter Gusev, Marte. El sitio se denominó Columbia Memorial Station, en honor a la tripulación del transbordador Columbia (1 de febrero de 2003).",
+      "value_en": "Gusev Crater, Mars. The site became known as Columbia Memorial Station, honoring the crew of space shuttle Columbia (1 February 2003).",
+      "sources": [
+        {
+          "url": "https://science.nasa.gov/mission/mer-spirit/",
+          "title": "Spirit",
+          "publisher": "NASA Science",
+          "excerpt": "The landing was about 8 miles (13.4 kilometers) from the planned target and inside the Gusev crater. The site became known as Columbia Memorial Station to honor the seven astronauts killed when the space shuttle Columbia broke apart Feb. 1, 2003, as it returned to Earth.",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true
+        }
+      ]
+    },
+    {
+      "id": "landing_date",
+      "category": "landing",
+      "verified": true,
+      "label_es": "Fecha de aterrizaje",
+      "label_en": "Landing date",
+      "value_es": "3 de enero de 2004 (hora del Pacífico de EE. UU.) / 4 de enero de 2004 (UTC). Es el mismo suceso en dos husos horarios.",
+      "value_en": "3 January 2004 (U.S. Pacific Time) / 4 January 2004 (UTC). The same event in two time zones.",
+      "recommended_citation_es": "3 de enero de 2004 (hora del Pacífico) / 4 de enero de 2004 (UTC)",
+      "recommended_citation_en": "3 January 2004, Pacific Time / 4 January 2004, UTC",
+      "disagreements": [
+        {
+          "topic": "landing_calendar_date",
+          "summary_es": "NASA Science dice 3 de enero de 2004; NSSDCA, NTRS y PDS/NAIF dicen 4 de enero de 2004 UTC. La señal se recibió a las 04:35 UT del 4 de enero (23:35 EST / 20:35 PST del 3 de enero).",
+          "summary_en": "NASA Science says 3 January 2004; NSSDCA, NTRS and PDS/NAIF say 4 January 2004 UTC. The signal was received at 04:35 UT on 4 January (11:35 p.m. EST / 8:35 p.m. PST on 3 January)."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://science.nasa.gov/mission/mer-spirit/",
+          "title": "Spirit",
+          "publisher": "NASA Science",
+          "excerpt": "Key Dates [...] Jan. 3, 2004: Mars landing",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true
+        },
+        {
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2003-027A",
+          "title": "Spirit (NSSDCA/COSPAR ID: 2003-027A)",
+          "publisher": "NASA NSSDCA",
+          "excerpt": "The landing took place at 04:35 UT on 4 January 2004 (Earth received time), (11:35 p.m. Jan. 3 EST)",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true
+        },
+        {
+          "url": "https://naif.jpl.nasa.gov/pub/naif/pds/data/mer2-m-spice-6-v1.0/mer2sp_1000/catalog/mission.cat",
+          "title": "MER-2 SPICE mission.cat",
+          "publisher": "NASA PDS / NAIF",
+          "excerpt": "Spirit landing in Gusev Crater on January 4, 2004 UTC",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true
+        },
+        {
+          "url": "https://ntrs.nasa.gov/citations/20160001767",
+          "title": "Mars Exploration Rover Spirit End of Mission Report",
+          "publisher": "NASA NTRS / JPL",
+          "excerpt": "The Mars Exploration Rover (MER) Spirit landed in Gusev crater on Mars on January 4, 2004, for a prime mission designed to last three months (90 sols).",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true,
+          "source_date": "2015-12-01"
+        }
+      ]
+    },
+    {
+      "id": "landing_time_impact",
+      "category": "landing",
+      "verified": true,
+      "label_es": "Hora del primer impacto (en Marte)",
+      "label_en": "Time of first impact (on Mars)",
+      "value_es": "04:26 UTC del 4 de enero de 2004; 14:25 hora solar local de Marte; Ls = 327,66.",
+      "value_en": "04:26 UTC on 4 January 2004; 14:25 Mars local solar time; Ls = 327.66.",
+      "disagreements": [
+        {
+          "topic": "impact_versus_earth_received_time",
+          "summary_es": "PDS/NAIF: primer impacto 04:26 UTC. NSSDCA: 04:35 UT como Earth received time. NASA Science dice que el conjunto “hit the Martian surface at 20:35 PST Jan. 3, 2004” (equivalente a 04:35 UTC del día 4, la hora de recepción).",
+          "summary_en": "PDS/NAIF: first impact 04:26 UTC. NSSDCA: 04:35 UT as Earth received time. NASA Science says the package “hit the Martian surface at 20:35 PST Jan. 3, 2004” (equal to 04:35 UTC on the 4th, the received-signal time)."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://naif.jpl.nasa.gov/pub/naif/pds/data/mer2-m-spice-6-v1.0/mer2sp_1000/catalog/mission.cat",
+          "title": "MER-2 SPICE mission.cat",
+          "publisher": "NASA PDS / NAIF",
+          "excerpt": "The landing (first impact) occurred at 04:26 UTC on January 4, 2004 for Spirit (1425 Mars local solar time, solar longitude Ls = 327.66)",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true
+        },
+        {
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2003-027A",
+          "title": "Spirit (NSSDCA/COSPAR ID: 2003-027A)",
+          "publisher": "NASA NSSDCA",
+          "excerpt": "The landing took place at 04:35 UT on 4 January 2004 (Earth received time), (11:35 p.m. Jan. 3 EST)",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true
+        },
+        {
+          "url": "https://science.nasa.gov/mission/mer-spirit/",
+          "title": "Spirit",
+          "publisher": "NASA Science",
+          "excerpt": "The entire rover package hit the Martian surface at 20:35 PST Jan. 3, 2004, at a velocity of about 46 feet per second (14 meters per second), bouncing 28 times",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true
+        }
+      ]
+    },
+    {
+      "id": "landing_bounces",
+      "category": "landing",
+      "verified": true,
+      "label_es": "Rebotes y rodadura de las airbags",
+      "label_en": "Bounces and airbag roll",
+      "value_es": "Rebotó 28 veces y se detuvo a unos 250–300 m del primer impacto, a unos 13,4 km del objetivo previsto. Velocidad de impacto citada: unos 14 m/s.",
+      "value_en": "Bounced 28 times and rolled to a stop about 250–300 meters from first impact, about 13.4 kilometers from the planned target. Cited impact speed: about 14 m/s.",
+      "sources": [
+        {
+          "url": "https://science.nasa.gov/mission/mer-spirit/",
+          "title": "Spirit",
+          "publisher": "NASA Science",
+          "excerpt": "bouncing 28 times before rolling to a stop about 820 to 980 feet (250 to 300 meters) from the point of first impact. [...] The landing was about 8 miles (13.4 kilometers) from the planned target",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true
+        },
+        {
+          "url": "https://naif.jpl.nasa.gov/pub/naif/pds/data/mer2-m-spice-6-v1.0/mer2sp_1000/catalog/mission.cat",
+          "title": "MER-2 SPICE mission.cat",
+          "publisher": "NASA PDS / NAIF",
+          "excerpt": "Spirit bounced 28 times before coming to rest on the base petal of the lander.",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true
+        }
+      ]
+    },
+    {
+      "id": "landing_coordinates",
+      "category": "landing",
+      "verified": true,
+      "label_es": "Coordenadas de aterrizaje",
+      "label_en": "Landing coordinates",
+      "value_es": "Dos pares oficiales (mismo aterrizaje, distintos tratamientos del marco MOLA IAU 2000): 14,5692° S, 175,4729° E (respecto a rasgos del mapa; usado por NASA Science) y 14,571892° S, 175,47848° E (posición inercial; NSSDCA redondea a 14,572° S, 175,478° E).",
+      "value_en": "Two official pairs (same landing, different MOLA IAU 2000 frame treatments): 14.5692° S, 175.4729° E (relative to map features; used by NASA Science) and 14.571892° S, 175.47848° E (inertial position; NSSDCA rounds to 14.572° S, 175.478° E).",
+      "values": {
+        "map_frame_mola_iau_2000": {
+          "lat_deg_south": 14.5692,
+          "lon_deg_east": 175.4729,
+          "source": "PDS/NAIF cartographic; NASA Science"
+        },
+        "inertial_mola_iau_2000": {
+          "lat_deg_south": 14.571892,
+          "lon_deg_east": 175.47848,
+          "source": "PDS/NAIF inertial"
+        },
+        "nssdca_rounded": {
+          "lat_deg_south": 14.572,
+          "lon_deg_east": 175.478,
+          "source": "NSSDCA"
+        }
+      },
+      "disagreements": [
+        {
+          "topic": "coordinate_reference_frame",
+          "summary_es": "No es un error: el catálogo PDS/NAIF explica los dos pares como posición inercial frente a posición respecto a rasgos del mapa.",
+          "summary_en": "Not an error: the PDS/NAIF catalog explains the two pairs as inertial position versus location relative to map features."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://science.nasa.gov/mission/mer-spirit/",
+          "title": "Spirit",
+          "publisher": "NASA Science",
+          "excerpt": "Landing coordinates were 14.5692 degrees south latitude and 175.4729 degrees east longitude.",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true
+        },
+        {
+          "url": "https://naif.jpl.nasa.gov/pub/naif/pds/data/mer2-m-spice-6-v1.0/mer2sp_1000/catalog/mission.cat",
+          "title": "MER-2 SPICE mission.cat",
+          "publisher": "NASA PDS / NAIF",
+          "excerpt": "Translated to the MOLA IAU 2000 frame [...] 14.571892 degrees S latitude and 175.47848 degrees E longitude for Spirit [...] The location of the landing sites, with respect to surface features in maps produced in the MOLA IAU 2000 cartographic reference frame, are 14.5692 degrees S latitude, 175.4729 degrees E longitude for Spirit",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true
+        },
+        {
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2003-027A",
+          "title": "Spirit (NSSDCA/COSPAR ID: 2003-027A)",
+          "publisher": "NASA NSSDCA",
+          "excerpt": "in Gusev Crater, at 14.572 S, 175.478 E.",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true
+        }
+      ]
+    },
+    {
+      "id": "egress_date",
+      "category": "landing",
+      "verified": true,
+      "label_es": "Salida del módulo de aterrizaje",
+      "label_en": "Egress from the lander",
+      "value_es": "15 de enero de 2004 (NSSDCA: 08:41 UT).",
+      "value_en": "15 January 2004 (NSSDCA: 08:41 UT).",
+      "sources": [
+        {
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2003-027A",
+          "title": "Spirit (NSSDCA/COSPAR ID: 2003-027A)",
+          "publisher": "NASA NSSDCA",
+          "excerpt": "The rover drove off the platform onto the surface of Mars on 15 January at 8:41 UT (3:41 a.m. EST).",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true
+        }
+      ]
+    },
+    {
+      "id": "athena_payload",
+      "category": "instruments",
+      "verified": true,
+      "label_es": "Carga útil Athena",
+      "label_en": "Athena science payload",
+      "value_es": "El grupo Pancam, Mini-TES, APXS, MB, MI y RAT se conoce como el paquete científico Athena, montado en el mástil y en el brazo robótico (IDD).",
+      "value_en": "The group Pancam, Mini-TES, APXS, MB, MI and RAT is known as the Athena science package, mounted on the mast and the robotic arm (IDD).",
+      "sources": [
+        {
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2003-027A",
+          "title": "Spirit (NSSDCA/COSPAR ID: 2003-027A)",
+          "publisher": "NASA NSSDCA",
+          "excerpt": "The group of science instruments (Pancam, Mini-TES, APXS, MB, MI, and RAT) is known as the Athena science package.",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true
+        }
+      ]
+    },
+    {
+      "id": "instrument_pancam",
+      "category": "instruments",
+      "verified": true,
+      "label_es": "Pancam",
+      "label_en": "Pancam (Panoramic Camera)",
+      "value_es": "Dos cámaras en el mástil (~1,5 m) para panorámicas en color y estéreo. Filtros 400–1100 nm; 1024 × 1024 píxeles.",
+      "value_en": "Two mast-mounted cameras (~1.5 m) taking detailed, multi-wavelength, 3-D panoramic pictures. Filters 400–1100 nm; 1024 × 1024 pixels.",
+      "sources": [
+        {
+          "url": "https://science.nasa.gov/mission/mars-exploration-rovers-spirit-and-opportunity/science-instruments/",
+          "title": "Science Instruments",
+          "publisher": "NASA Science",
+          "excerpt": "The Panoramic Camera is known by its nickname, Pancam. Two cameras worked in combination to take detailed, multi-wavelength, 3-D panoramic pictures of the Martian landscape surrounding the rover.",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true
+        }
+      ]
+    },
+    {
+      "id": "instrument_minites",
+      "category": "instruments",
+      "verified": true,
+      "label_es": "Mini-TES",
+      "label_en": "Mini-TES (Miniature Thermal Emission Spectrometer)",
+      "value_es": "Espectrómetro térmico infrarrojo en el cuerpo del rover; el mástil actúa como periscopio. Afinado para minerales formados en agua.",
+      "value_en": "Infrared thermal emission spectrometer housed in the rover body; the mast acts as a periscope. Specially tuned to look for minerals formed in water.",
+      "sources": [
+        {
+          "url": "https://science.nasa.gov/mission/mars-exploration-rovers-spirit-and-opportunity/science-instruments/",
+          "title": "Science Instruments",
+          "publisher": "NASA Science",
+          "excerpt": "Mini-TES is specially tuned to look for minerals formed in water.",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true
+        }
+      ]
+    },
+    {
+      "id": "instrument_apxs",
+      "category": "instruments",
+      "verified": true,
+      "label_es": "APXS",
+      "label_en": "APXS (Alpha Particle X-ray Spectrometer)",
+      "value_es": "En la torreta del brazo. Determina la química elemental de rocas y suelos a partir de la respuesta a rayos X y partículas alfa.",
+      "value_en": "On the arm turret. Determines elemental chemistry of rocks and soils from their response to X-rays and alpha particles.",
+      "sources": [
+        {
+          "url": "https://science.nasa.gov/mission/mars-exploration-rovers-spirit-and-opportunity/science-instruments/",
+          "title": "Science Instruments",
+          "publisher": "NASA Science",
+          "excerpt": "The APXS reveals the elemental chemistry of rocks and soils by measuring the distinctive way differentdifference materials respond to two kinds of radiation: X-rays and alpha particles.",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true
+        }
+      ]
+    },
+    {
+      "id": "instrument_mossbauer",
+      "category": "instruments",
+      "verified": true,
+      "label_es": "Espectrómetro Mössbauer (MB)",
+      "label_en": "Mössbauer spectrometer (MB)",
+      "value_es": "En la torreta del brazo. Identifica minerales con hierro. Una medida típica tardaba unas 12 horas.",
+      "value_en": "On the arm turret. Identifies iron-bearing minerals. One measurement took about 12 hours.",
+      "sources": [
+        {
+          "url": "https://science.nasa.gov/mission/mars-exploration-rovers-spirit-and-opportunity/science-instruments/",
+          "title": "Science Instruments",
+          "publisher": "NASA Science",
+          "excerpt": "The MB determines the makeup and quantities of iron-bearing minerals in geological samples studied by the rover. [...] One Mössbauer measurement takes about 12 hours.",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true
+        }
+      ]
+    },
+    {
+      "id": "instrument_mi",
+      "category": "instruments",
+      "verified": true,
+      "label_es": "Microscopic Imager (MI)",
+      "label_en": "Microscopic Imager (MI)",
+      "value_es": "En la torreta del brazo. Primeros planos en blanco y negro de rocas y suelos (1024 × 1024; ~31 µm/píxel).",
+      "value_en": "On the arm turret. Extreme close-up black-and-white views of rocks and soils (1024 × 1024; ~31 microns per pixel).",
+      "sources": [
+        {
+          "url": "https://science.nasa.gov/mission/mars-exploration-rovers-spirit-and-opportunity/science-instruments/",
+          "title": "Science Instruments",
+          "publisher": "NASA Science",
+          "excerpt": "To provide extreme close-up black-and-white views of rocks and soils, providing context for the interpretation of data about minerals and elements.",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true
+        }
+      ]
+    },
+    {
+      "id": "instrument_rat",
+      "category": "instruments",
+      "verified": true,
+      "label_es": "RAT (Rock Abrasion Tool)",
+      "label_en": "RAT (Rock Abrasion Tool)",
+      "value_es": "En la torreta del brazo. Muela la superficie (~45 mm de diámetro, 5 mm de profundidad). Primer uso en Marte: 6 de febrero de 2004, roca Adirondack.",
+      "value_en": "On the arm turret. Grinds the surface (~45 mm diameter, 5 mm deep). First use on Mars: 6 February 2004, on the rock Adirondack.",
+      "sources": [
+        {
+          "url": "https://science.nasa.gov/mission/mars-exploration-rovers-spirit-and-opportunity/science-instruments/",
+          "title": "Science Instruments",
+          "publisher": "NASA Science",
+          "excerpt": "The RAT's rotating, grinding teeth gnaw into the surface of Martian rock to reveal fresh mineral surfaces for analysis by the rover's scientific tools.",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true
+        },
+        {
+          "url": "https://science.nasa.gov/mission/mer-spirit/",
+          "title": "Spirit",
+          "publisher": "NASA Science",
+          "excerpt": "The next day, Spirit used its rock abrasion tool (RAT) to grind down the surface of a rock called Adirondack, a feat performed for the very first time on Mars.",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true
+        }
+      ]
+    },
+    {
+      "id": "planned_duration",
+      "category": "duration",
+      "verified": true,
+      "label_es": "Duración prevista (misión principal)",
+      "label_en": "Planned prime-mission duration",
+      "value_es": "90 soles marcianos, hasta hacia el 4 de abril de 2004; también descrita como misión de tres meses o de 90 días.",
+      "value_en": "90 Martian days (sols), until about 4 April 2004; also described as a three-month or 90-day mission.",
+      "sources": [
+        {
+          "url": "https://science.nasa.gov/mission/mer-spirit/",
+          "title": "Spirit",
+          "publisher": "NASA Science",
+          "excerpt": "The mission was originally planned to last 90 Martian days, until about April 4, 2004.",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true
+        },
+        {
+          "url": "https://ntrs.nasa.gov/citations/20160001767",
+          "title": "Mars Exploration Rover Spirit End of Mission Report",
+          "publisher": "NASA NTRS / JPL",
+          "excerpt": "a prime mission designed to last three months (90 sols).",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true,
+          "source_date": "2015-12-01"
+        }
+      ]
+    },
+    {
+      "id": "planned_distance",
+      "category": "duration",
+      "verified": true,
+      "label_es": "Distancia de recorrido prevista",
+      "label_en": "Planned driving distance",
+      "value_es": "Exploración local de no más de un tercio de milla (600 metros).",
+      "value_en": "Localized exploration of no more than one-third of a mile (600 meters).",
+      "sources": [
+        {
+          "url": "https://www.nasa.gov/missions/mer/20-years-after-landing-how-nasas-twin-rovers-changed-mars-science/",
+          "title": "20 Years After Landing: How NASA’s Twin Rovers Changed Mars Science",
+          "publisher": "NASA / JPL",
+          "excerpt": "who had only expected localized exploration over a distance of no more than one-third of a mile (600 meters).",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true,
+          "source_date": "2024-01-17"
+        }
+      ]
+    },
+    {
+      "id": "actual_duration",
+      "category": "duration",
+      "verified": true,
+      "label_es": "Duración real de las operaciones",
+      "label_en": "Actual operating lifetime",
+      "value_es": "6 años, 2 meses y 19 días (3 de enero de 2004 – 22 de marzo de 2010), más de 25 veces la vida útil prevista.",
+      "value_en": "6 years, 2 months, and 19 days (3 January 2004 – 22 March 2010), more than 25 times the original intended lifetime.",
+      "sources": [
+        {
+          "url": "https://science.nasa.gov/mission/mer-spirit/",
+          "title": "Spirit",
+          "publisher": "NASA Science",
+          "excerpt": "Described as a \"wonderful workhorse\"—Spirit operated for 6 years, 2 months, and 19 days, more than 25 times its original intended lifetime.",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true
+        }
+      ]
+    },
+    {
+      "id": "actual_distance",
+      "category": "duration",
+      "verified": true,
+      "label_es": "Distancia real recorrida",
+      "label_en": "Actual distance driven",
+      "value_es": "7,73 km (4,8 millas), más de 12 veces el objetivo de la misión.",
+      "value_en": "7.73 kilometers (4.8 miles), more than 12 times the mission goal.",
+      "sources": [
+        {
+          "url": "https://science.nasa.gov/mission/mer-spirit/",
+          "title": "Spirit",
+          "publisher": "NASA Science",
+          "excerpt": "The rover traveled 4.8 miles (7.73 kilometers) across the Martian plains.",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true
+        },
+        {
+          "url": "https://www.jpl.nasa.gov/news/nasas-spirit-rover-completes-mission-on-mars/",
+          "title": "NASA's Spirit Rover Completes Mission on Mars",
+          "publisher": "NASA Jet Propulsion Laboratory",
+          "excerpt": "Spirit drove 4.8 miles (7.73 kilometers), more than 12 times the goal set for the mission.",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true,
+          "source_date": "2011-05-25"
+        },
+        {
+          "url": "https://science.nasa.gov/mission/mars-exploration-rovers-spirit-and-opportunity/",
+          "title": "Mars Exploration Rovers: Spirit and Opportunity",
+          "publisher": "NASA Science",
+          "excerpt": "By the end of its mission, Spirit journeyed 4.8 miles (7.7 kilometers) on Mars.",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true
+        }
+      ]
+    },
+    {
+      "id": "images_returned",
+      "category": "duration",
+      "verified": true,
+      "label_es": "Imágenes y uso del RAT",
+      "label_en": "Images and RAT use",
+      "value_es": "Más de 124 000 imágenes. Pulió 15 blancos rocosos con el RAT y cepilló 92.",
+      "value_en": "More than 124,000 images. Ground 15 rock targets with the RAT and brushed 92 targets.",
+      "sources": [
+        {
+          "url": "https://www.jpl.nasa.gov/news/nasas-spirit-rover-completes-mission-on-mars/",
+          "title": "NASA's Spirit Rover Completes Mission on Mars",
+          "publisher": "NASA Jet Propulsion Laboratory",
+          "excerpt": "The rover returned more than 124,000 images. It ground the surfaces off 15 rock targets and scoured 92 targets with a brush",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true,
+          "source_date": "2011-05-25"
+        }
+      ]
+    },
+    {
+      "id": "columbia_hills",
+      "category": "discoveries",
+      "verified": true,
+      "label_es": "Columbia Hills",
+      "label_en": "Columbia Hills",
+      "value_es": "En 2004 encontró una variedad sorprendente de lecho rocoso en las Columbia Hills, con historia geológica compleja; algunas rocas mostraban alteración por agua.",
+      "value_en": "In 2004 it discovered a surprising variety of bedrock in the Columbia Hills, showing a complex geological history; some rocks showed evidence of alteration by water.",
+      "sources": [
+        {
+          "url": "https://science.nasa.gov/mission/mer-spirit/",
+          "title": "Spirit",
+          "publisher": "NASA Science",
+          "excerpt": "2004: Discovered a surprising variety of bedrock in Columbia Hills, showing a complex geological history for the region. Some of the rocks showed evidence of alteration by water.",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true
+        }
+      ]
+    },
+    {
+      "id": "husband_hill_summit",
+      "category": "discoveries",
+      "verified": true,
+      "label_es": "Cumbre de Husband Hill",
+      "label_en": "Husband Hill summit",
+      "value_es": "El 29 de septiembre de 2005 alcanzó la cumbre de Husband Hill. JPL: primer robot en coronar una colina en otro planeta; pendientes de hasta 30°.",
+      "value_en": "On 29 September 2005 it reached the summit of Husband Hill. JPL: first robot to summit a hill on another planet; slopes up to 30 degrees.",
+      "sources": [
+        {
+          "url": "https://science.nasa.gov/mission/mer-spirit/",
+          "title": "Spirit",
+          "publisher": "NASA Science",
+          "excerpt": "On Sept. 29, 2005, the rover finally reached the summit of Husband Hill, a small flat plain from which Spirit was able to take 360-degree panoramas in true color of the Gusev Crater.",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true
+        },
+        {
+          "url": "https://www.jpl.nasa.gov/news/nasas-spirit-rover-completes-mission-on-mars/",
+          "title": "NASA's Spirit Rover Completes Mission on Mars",
+          "publisher": "NASA Jet Propulsion Laboratory",
+          "excerpt": "climbed slopes up to 30 degrees as Spirit became the first robot to summit a hill on another planet",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true,
+          "source_date": "2011-05-25"
+        }
+      ]
+    },
+    {
+      "id": "silica_gertrude_weise",
+      "category": "discoveries",
+      "verified": true,
+      "label_es": "Suelo rico en sílice (Gertrude Weise, cerca de Home Plate)",
+      "label_en": "Silica-rich soil (Gertrude Weise, near Home Plate)",
+      "value_es": "En 2007, al arrastrar la rueda delantera derecha inoperable, removió un suelo brillante. El APXS midió alrededor del 90 % de sílice pura. Interpretación oficial: requiere agua; posibles manantiales termales o fumarolas/respiraderos de vapor. Nombre informal: Gertrude Weise.",
+      "value_en": "In 2007, while dragging its inoperable right-front wheel, it plowed up bright soil. The APXS measured about 90 percent pure silica. Official interpretation: requires water; possible hot springs or fumaroles/steam vents. Informal name: Gertrude Weise.",
+      "sources": [
+        {
+          "url": "https://www.jpl.nasa.gov/news/mars-rover-spirit-unearths-surprise-evidence-of-wetter-past/",
+          "title": "Mars Rover Spirit Unearths Surprise Evidence of Wetter Past",
+          "publisher": "NASA Jet Propulsion Laboratory",
+          "excerpt": "the alpha particle X-ray spectrometer, a chemical analyzer at the end of Spirit's arm, had measured a composition of about 90 percent pure silica for this soil. [...] The newly discovered patch of soil has been given the informal name \"Gertrude Weise\"",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true,
+          "source_date": "2007-05-21"
+        },
+        {
+          "url": "https://science.nasa.gov/mission/mars-exploration-rovers-spirit-and-opportunity/science-highlights/",
+          "title": "Science Highlights",
+          "publisher": "NASA Science",
+          "excerpt": "While dragging a wheel, Spirit churned up soil and found 90% pure silica at \"Home Plate.\" On Earth, this kind of silica usually exists in hot springs or hot steam vents",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true
+        },
+        {
+          "url": "https://www.jpl.nasa.gov/news/nasas-spirit-rover-completes-mission-on-mars/",
+          "title": "NASA's Spirit Rover Completes Mission on Mars",
+          "publisher": "NASA Jet Propulsion Laboratory",
+          "excerpt": "\"It showed that there were once hot springs or steam vents at the Spirit site, which could have provided favorable conditions for microbial life.\"",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true,
+          "source_date": "2011-05-25"
+        }
+      ]
+    },
+    {
+      "id": "home_plate",
+      "category": "discoveries",
+      "verified": true,
+      "label_es": "Home Plate",
+      "label_en": "Home Plate",
+      "value_es": "Meseta baja de ceniza endurecida, destino principal tras Husband Hill y lugar de reposo final del rover. Indicios de explosión antigua / vulcanismo explosivo por interacción de agua y roca caliente.",
+      "value_en": "A low plateau of hardened ash, Spirit’s main destination after Husband Hill and the rover’s final resting place. Evidence of an ancient explosion / explosive volcanism from water interacting with hot rock.",
+      "sources": [
+        {
+          "url": "https://science.nasa.gov/mission/mars-exploration-rovers-spirit-and-opportunity/science-highlights/",
+          "title": "Science Highlights",
+          "publisher": "NASA Science",
+          "excerpt": "Spirit discovered that an ancient volcano erupted at \"Home Plate,\" the rover's final resting place. Together, powerful steam eruptions from heated underground water produced some explosive volcanism.",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true
+        },
+        {
+          "url": "https://www.jpl.nasa.gov/news/nasas-spirit-rover-completes-mission-on-mars/",
+          "title": "NASA's Spirit Rover Completes Mission on Mars",
+          "publisher": "NASA Jet Propulsion Laboratory",
+          "excerpt": "\"What Spirit showed us at Home Plate was that early Mars could be a violent place, with water and hot rock interacting to make what must have been spectacular volcanic explosions.\"",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true,
+          "source_date": "2011-05-25"
+        },
+        {
+          "url": "https://science.nasa.gov/mission/mer-spirit/",
+          "title": "Spirit",
+          "publisher": "NASA Science",
+          "excerpt": "2006: Found evidence of an ancient explosion at a bright, low plateau called Home Plate.",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true
+        }
+      ]
+    },
+    {
+      "id": "comanche_carbonates",
+      "category": "discoveries",
+      "verified": true,
+      "label_es": "Afloramiento Comanche (carbonatos)",
+      "label_en": "Comanche outcrop (carbonates)",
+      "value_es": "Rocas unas 10 veces más ricas en carbonatos de magnesio y hierro que otras rocas marcianas estudiadas hasta entonces. Ambiente antiguo cálido, húmedo y de pH casi neutro. Observaciones de finales de 2005.",
+      "value_en": "Rocks 10 times richer in magnesium and iron carbonates than any other Martian rocks studied before. A warm, wet, near-neutral-pH ancient environment. Observations from late 2005.",
+      "sources": [
+        {
+          "url": "https://science.nasa.gov/mission/mars-exploration-rovers-spirit-and-opportunity/science-highlights/",
+          "title": "Science Highlights",
+          "publisher": "NASA Science",
+          "excerpt": "At a place called Comanche, Spirit found rocks 10 times richer in key chemicals (magnesium and iron carbonates) than any other Martian rocks studied before. These rocks formed when Mars was warm and wet (with a thicker carbon-dioxide atmosphere and near-neutral-pH water).",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true
+        },
+        {
+          "url": "https://www.jpl.nasa.gov/news/nasas-spirit-rover-completes-mission-on-mars/",
+          "title": "NASA's Spirit Rover Completes Mission on Mars",
+          "publisher": "NASA Jet Propulsion Laboratory",
+          "excerpt": "an outcrop on Husband Hill bears a high concentration of carbonate. This is evidence of a wet, non-acidic ancient environment that may have been favorable for microbial life.",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true,
+          "source_date": "2011-05-25"
+        }
+      ]
+    },
+    {
+      "id": "tyrone_soil",
+      "category": "discoveries",
+      "verified": true,
+      "label_es": "Suelo Tyrone",
+      "label_en": "Tyrone soil",
+      "value_es": "En 2006 removió suelo brillante en Tyrone, con mucho azufre y un rastro de agua.",
+      "value_en": "In 2006 it churned up bright soil at Tyrone containing much sulfur and a trace of water.",
+      "sources": [
+        {
+          "url": "https://science.nasa.gov/mission/mer-spirit/",
+          "title": "Spirit",
+          "publisher": "NASA Science",
+          "excerpt": "2006: Churned up bright Martian soil at a place named Tyrone that contained much sulfur and a trace of water.",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true
+        }
+      ]
+    },
+    {
+      "id": "right_front_wheel",
+      "category": "end_of_mission",
+      "verified": true,
+      "label_es": "Fallo de la rueda delantera derecha",
+      "label_en": "Right-front wheel failure",
+      "value_es": "Dejó de funcionar en 2006. Spirit avanzó a menudo marcha atrás, arrastrándola; eso expuso suelos ricos en sílice. Aun así recorrió casi un kilómetro más.",
+      "value_en": "Stopped working in 2006. Spirit often then drove backwards, dragging it, which exposed silica-rich soils. It still drove nearly a kilometer afterward.",
+      "sources": [
+        {
+          "url": "https://science.nasa.gov/mission/mer-spirit/",
+          "title": "Spirit",
+          "publisher": "NASA Science",
+          "excerpt": "The trip to McCool Hill was eventually canceled, partly because a front wheel stopped working. This malfunction proved to be beneficial to scientists since the inactive wheel scraped off the upper layer of Martian soil as the rover moved, exposing bright silica-rich dust",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true
+        },
+        {
+          "url": "https://www.jpl.nasa.gov/news/nasas-spirit-rover-completes-mission-on-mars/",
+          "title": "NASA's Spirit Rover Completes Mission on Mars",
+          "publisher": "NASA Jet Propulsion Laboratory",
+          "excerpt": "covered more than half a mile (nearly a kilometer) after Spirit's right-front wheel became immobile in 2006.",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true,
+          "source_date": "2011-05-25"
+        }
+      ]
+    },
+    {
+      "id": "stuck_troy",
+      "category": "end_of_mission",
+      "verified": true,
+      "label_es": "Inmovilización en Troy",
+      "label_en": "Embedding at Troy",
+      "value_es": "El 23 de abril de 2009, junto al borde oeste de Home Plate, las ruedas rompieron una costra y entraron en arena suelta en un sitio llamado Troy (a unos 3,2 km al sureste del aterrizaje). El 1 de mayo ya no podía moverse.",
+      "value_en": "On 23 April 2009, beside the western edge of Home Plate, the wheels broke through a crust into soft sand at a site called Troy (about 3.2 km southeast of the landing site). By 1 May the rover could no longer move.",
+      "disagreements": [
+        {
+          "topic": "troy_immobilization_date",
+          "summary_es": "NSSDCA y JPL datan el hundimiento el 23 de abril de 2009; el 1 de mayo ya no se movía. NASA Science comprime el relato en “On May 1, 2009… Spirit became stuck.”",
+          "summary_en": "NSSDCA and JPL date the embedding to 23 April 2009; by 1 May it could no longer move. NASA Science compresses this to “On May 1, 2009… Spirit became stuck.”"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2003-027A",
+          "title": "Spirit (NSSDCA/COSPAR ID: 2003-027A)",
+          "publisher": "NASA NSSDCA",
+          "excerpt": "On 23 April 2009, the rover broke through a thin crust into a pocket of sand that severely limited its mobility. By 1 May it could no longer move at all.",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true
+        },
+        {
+          "url": "https://science.nasa.gov/mission/mer-spirit/",
+          "title": "Spirit",
+          "publisher": "NASA Science",
+          "excerpt": "Unfortunately, on May 1, 2009, while driving south beside the western edge of a low plateau called Home Plate, Spirit became stuck in soft soil, its wheels unable to generate traction against the ground.",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true
+        },
+        {
+          "url": "https://www.jpl.nasa.gov/missions/mars-exploration-rover-spirit-mer-spirit/",
+          "title": "Spirit Rover",
+          "publisher": "NASA Jet Propulsion Laboratory",
+          "excerpt": "In May 2009, the rover became embedded in soft soil at a site called \"Troy\" with only five working wheels to aid in the rescue effort.",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true
+        },
+        {
+          "url": "https://www.jpl.nasa.gov/news/nasa-to-begin-attempts-to-free-sand-trapped-mars-rover/",
+          "title": "NASA to Begin Attempts to Free Sand-Trapped Mars Rover",
+          "publisher": "NASA Jet Propulsion Laboratory",
+          "excerpt": "Spirit has been lodged at a site scientists call \"Troy\" since April 23. [...] Data show Spirit is straddling the edge of a 26-foot-wide crater that had been filled long ago with sulfate-bearing sands produced in a hot water or steam environment.",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true
+        }
+      ]
+    },
+    {
+      "id": "right_rear_wheel",
+      "category": "end_of_mission",
+      "verified": true,
+      "label_es": "Fallo de la rueda trasera derecha",
+      "label_en": "Right-rear wheel failure",
+      "value_es": "El 28 de noviembre de 2009 dejó de funcionar.",
+      "value_en": "Stopped working on 28 November 2009.",
+      "sources": [
+        {
+          "url": "https://science.nasa.gov/mission/mer-spirit/",
+          "title": "Spirit",
+          "publisher": "NASA Science",
+          "excerpt": "On Nov. 28, another of Spirit’s six wheels, the right rear one, stopped working.",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true
+        }
+      ]
+    },
+    {
+      "id": "stationary_platform",
+      "category": "end_of_mission",
+      "verified": true,
+      "label_es": "Plataforma científica estacionaria",
+      "label_en": "Stationary science platform",
+      "value_es": "El 26 de enero de 2010 NASA designó a Spirit como plataforma científica fija. No se logró la inclinación norte deseada para el invierno.",
+      "value_en": "On 26 January 2010 NASA designated Spirit a stationary science platform. The desired northward tilt for winter was not achieved.",
+      "sources": [
+        {
+          "url": "https://www.jpl.nasa.gov/news/nasas-mars-rover-spirit-starts-a-new-chapter/",
+          "title": "NASA's Mars Rover Spirit Starts a New Chapter",
+          "publisher": "NASA Jet Propulsion Laboratory",
+          "excerpt": "NASA has designated the once-roving scientific explorer a stationary science platform after efforts during the past several months to free it from a sand trap have been unsuccessful. [...] \"It looks like Spirit's current location on Mars will be its final resting place.\"",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true,
+          "source_date": "2010-01-26"
+        },
+        {
+          "url": "https://science.nasa.gov/mission/mer-spirit/",
+          "title": "Spirit",
+          "publisher": "NASA Science",
+          "excerpt": "By late January 2010, after many attempts to move Spirit had failed, mission planners reformulated the Spirit mission as a stationary science platform. [...] In the end, the desired tilt was not achieved.",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true
+        }
+      ]
+    },
+    {
+      "id": "last_communication",
+      "category": "end_of_mission",
+      "verified": true,
+      "label_es": "Última comunicación",
+      "label_en": "Last communication",
+      "value_es": "22 de marzo de 2010 (sol 2210).",
+      "value_en": "22 March 2010 (sol 2210).",
+      "sources": [
+        {
+          "url": "https://www.jpl.nasa.gov/news/nasas-spirit-rover-completes-mission-on-mars/",
+          "title": "NASA's Spirit Rover Completes Mission on Mars",
+          "publisher": "NASA Jet Propulsion Laboratory",
+          "excerpt": "Spirit last communicated on March 22, 2010, as Martian winter approached and the rover's solar-energy supply declined.",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true,
+          "source_date": "2011-05-25"
+        },
+        {
+          "url": "https://ntrs.nasa.gov/citations/20160001767",
+          "title": "Mars Exploration Rover Spirit End of Mission Report",
+          "publisher": "NASA NTRS / JPL",
+          "excerpt": "the last communication received from Spirit occurred on Sol 2210 (March 22, 2010).",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true,
+          "source_date": "2015-12-01"
+        },
+        {
+          "url": "https://science.nasa.gov/mission/mer-spirit/",
+          "title": "Spirit",
+          "publisher": "NASA Science",
+          "excerpt": "After March 22, 2010, mission controllers at NASA's Jet Propulsion Laboratory (JPL) were not able to regain contact with Spirit.",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true
+        }
+      ]
+    },
+    {
+      "id": "end_of_mission",
+      "category": "end_of_mission",
+      "verified": true,
+      "label_es": "Declaración oficial de fin de misión",
+      "label_en": "Official end-of-mission declaration",
+      "value_es": "25 de mayo de 2011. NASA terminó los intentos de contacto y declaró la misión completa.",
+      "value_en": "25 May 2011. NASA ended contact attempts and declared the mission complete.",
+      "disagreements": [
+        {
+          "topic": "recovery_closeout_date",
+          "summary_es": "El anuncio público y NASA Science fijan el 25 de mayo de 2011. El informe técnico NTRS/JPL dice que la búsqueda y recuperación concluyeron el 13 de julio de 2011 (1 411 comandos entre el 27 de julio de 2010 y esa fecha). NASA Science habla de más de 1 300 comandos.",
+          "summary_en": "The public announcement and NASA Science set 25 May 2011. The NTRS/JPL technical report says search and recovery concluded on 13 July 2011 (1,411 commands between 27 July 2010 and that date). NASA Science says more than 1,300 commands."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.jpl.nasa.gov/news/nasas-spirit-rover-completes-mission-on-mars/",
+          "title": "NASA's Spirit Rover Completes Mission on Mars",
+          "publisher": "NASA Jet Propulsion Laboratory",
+          "excerpt": "NASA has ended operational planning activities for the Mars rover Spirit and transitioned the Mars Exploration Rover Project to a single-rover operation focused on Spirit's still-active twin, Opportunity.",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true,
+          "source_date": "2011-05-25"
+        },
+        {
+          "url": "https://science.nasa.gov/mission/mer-spirit/",
+          "title": "Spirit",
+          "publisher": "NASA Science",
+          "excerpt": "On May 25, 2011, NASA ended efforts to contact the marooned rover and declared its mission complete. The rover had been silent since March 2010. [...] Despite more than 1,300 commands sent to Spirit, NASA officially concluded its recovery efforts May 25, 2011.",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true
+        },
+        {
+          "url": "https://ntrs.nasa.gov/citations/20160001767",
+          "title": "Mars Exploration Rover Spirit End of Mission Report",
+          "publisher": "NASA NTRS / JPL",
+          "excerpt": "Following the loss of signal, the Mars Exploration Rover Project radiated over 1400 commands to Mars [...] Search and recovery efforts concluded on July 13, 2011.",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true,
+          "source_date": "2015-12-01"
+        }
+      ]
+    },
+    {
+      "id": "probable_cause",
+      "category": "end_of_mission",
+      "verified": true,
+      "label_es": "Causa más probable de la pérdida de contacto",
+      "label_en": "Most probable cause of loss of contact",
+      "value_es": "Frío excesivo que dejó ineficaces los calentadores de supervivencia, en el cuarto invierno en Marte, sin poder orientar bien los paneles porque el rover estaba atrapado en Troy.",
+      "value_en": "Excessive cold that made survival heaters ineffective, during the fourth winter on Mars, without being able to tilt the arrays favorably because the rover was stuck at Troy.",
+      "sources": [
+        {
+          "url": "https://science.nasa.gov/mission/mer-spirit/",
+          "title": "Spirit",
+          "publisher": "NASA Science",
+          "excerpt": "The most probable cause of the loss of contact was the excessive cold that made its survival heaters ineffective.",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true
+        },
+        {
+          "url": "https://ntrs.nasa.gov/citations/20160001767",
+          "title": "Mars Exploration Rover Spirit End of Mission Report",
+          "publisher": "NASA NTRS / JPL",
+          "excerpt": "It is the MER project’s assessment that Spirit succumbed to the extreme environmental conditions experienced during its fourth winter on Mars.",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true,
+          "source_date": "2015-12-01"
+        }
+      ]
+    },
+    {
+      "id": "remains_on_mars",
+      "category": "legacy",
+      "verified": true,
+      "label_es": "Spirit permanece en Marte",
+      "label_en": "Spirit remains on Mars",
+      "value_es": "El hardware no se recuperó. Permanece en Troy, junto a Home Plate, en el cráter Gusev, descrito como su lugar de reposo final (“final resting place”) y como “the marooned rover”.",
+      "value_en": "The hardware was not retrieved. It remains at Troy, next to Home Plate, in Gusev Crater, described as its “final resting place” and as “the marooned rover.”",
+      "sources": [
+        {
+          "url": "https://www.jpl.nasa.gov/news/nasas-mars-rover-spirit-starts-a-new-chapter/",
+          "title": "NASA's Mars Rover Spirit Starts a New Chapter",
+          "publisher": "NASA Jet Propulsion Laboratory",
+          "excerpt": "\"It looks like Spirit's current location on Mars will be its final resting place.\"",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true,
+          "source_date": "2010-01-26"
+        },
+        {
+          "url": "https://science.nasa.gov/mission/mer-spirit/",
+          "title": "Spirit",
+          "publisher": "NASA Science",
+          "excerpt": "On May 25, 2011, NASA ended efforts to contact the marooned rover and declared its mission complete.",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true
+        },
+        {
+          "url": "https://science.nasa.gov/mission/mars-exploration-rovers-spirit-and-opportunity/science-highlights/",
+          "title": "Science Highlights",
+          "publisher": "NASA Science",
+          "excerpt": "Spirit discovered that an ancient volcano erupted at \"Home Plate,\" the rover's final resting place.",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true
+        }
+      ]
+    },
+    {
+      "id": "legacy_later_missions",
+      "category": "legacy",
+      "verified": true,
+      "label_es": "Legado e influencia en misiones posteriores",
+      "label_en": "Legacy and influence on later missions",
+      "value_es": "Junto con Opportunity, fueron los primeros en demostrar un Marte temprano húmedo y abrieron camino a Curiosity y Perseverance. En parte por la ciencia de ambos, NASA aprobó el desarrollo de Curiosity. También aportaron prácticas de operación, software y navegación 3D que siguen usándose.",
+      "value_en": "Together with Opportunity, they were the first to prove a wet, early Mars and paved the way for Curiosity and Perseverance. Thanks in part to the science collected by both, NASA approved development of Curiosity. They also contributed operational practices, software, and 3D navigation still in use.",
+      "sources": [
+        {
+          "url": "https://www.nasa.gov/missions/mer/20-years-after-landing-how-nasas-twin-rovers-changed-mars-science/",
+          "title": "20 Years After Landing: How NASA’s Twin Rovers Changed Mars Science",
+          "publisher": "NASA / JPL",
+          "excerpt": "\"Our twin rovers were the first to prove a wet, early Mars once existed,\" said former project scientist Matt Golombek [...] \"They paved the way for learning even more about the Red Planet's past with larger rovers like Curiosity and Perseverance.\" [...] Thanks in part to the science collected by Spirit and Opportunity, NASA approved development of the SUV-size Curiosity rover",
+          "http_status": 200,
+          "accessed": "2026-11-14",
+          "verified_on_page": true,
+          "source_date": "2024-01-17"
+        }
+      ]
+    }
+  ]
+}
