@@ -22,5 +22,5 @@
 
 ## Video demo / Demo video (`docs/media/ecos-demo.mp4`)
 
-- **ES:** Clips grabados por el equipo (Antony Camacho) con la app real; editado por ChatGPT Work en DaVinci Resolve (por delegación del equipo); la música de fondo y los efectos de sonido se generaron con IA. Sin imágenes generadas con IA.
-- **EN:** Clips recorded by the team (Antony Camacho) with the real app; edited by ChatGPT Work in DaVinci Resolve (delegated by the team); the background music and sound effects were AI-generated. No AI-generated images.
+- **ES:** Clips grabados por el equipo (Antony Camacho) con la app real; editado por ChatGPT Work con FFmpeg (por delegación del equipo); la música de fondo y los efectos de sonido se sintetizaron con código Python generado con IA. Sin imágenes generadas con IA.
+- **EN:** Clips recorded by the team (Antony Camacho) with the real app; edited by ChatGPT Work with FFmpeg (delegated by the team); the background music and sound effects were synthesized with AI-generated Python code. No AI-generated images.
